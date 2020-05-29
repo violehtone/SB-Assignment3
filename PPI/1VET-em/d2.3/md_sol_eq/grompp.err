@@ -1,0 +1,115 @@
+                         :-)  G  R  O  M  A  C  S  (-:
+
+        Getting the Right Output Means no Artefacts in Calculating Stuff
+
+                            :-)  VERSION 4.6.7  (-:
+
+        Contributions from Mark Abraham, Emile Apol, Rossen Apostolov, 
+           Herman J.C. Berendsen, Aldert van Buuren, Pär Bjelkmar,  
+     Rudi van Drunen, Anton Feenstra, Gerrit Groenhof, Christoph Junghans, 
+        Peter Kasson, Carsten Kutzner, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+         Copyright (c) 2001-2012,2013, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+       modify it under the terms of the GNU Lesser General Public License
+        as published by the Free Software Foundation; either version 2.1
+             of the License, or (at your option) any later version.
+
+                 :-)  /usr/local/gromacs/4.6.7/bin/grompp  (-:
+
+Option     Filename  Type         Description
+------------------------------------------------------------
+  -f md_pull_eq.mdp  Input        grompp input file with MD parameters
+ -po      mdout.mdp  Output       grompp input file with MD parameters
+  -c       conf.gro  Input        Structure file: gro g96 pdb tpr etc.
+  -r       conf.gro  Input, Opt.  Structure file: gro g96 pdb tpr etc.
+ -rb       conf.gro  Input, Opt.  Structure file: gro g96 pdb tpr etc.
+  -n 1VET-em_cg_sol.ndx  Input, Opt!  Index file
+  -p         cg.top  Input        Topology file
+ -pp  processed.top  Output, Opt. Topology file
+  -o      topol.tpr  Output       Run input file: tpr tpb tpa
+  -t       traj.trr  Input, Opt.  Full precision trajectory: trr trj cpt
+  -e       ener.edr  Input, Opt.  Energy file
+-ref     rotref.trr  In/Out, Opt. Full precision trajectory: trr trj cpt
+
+Option       Type   Value   Description
+------------------------------------------------------
+-[no]h       bool   no      Print help info and quit
+-[no]version bool   no      Print version info and quit
+-nice        int    0       Set the nicelevel
+-[no]v       bool   no      Be loud and noisy
+-time        real   -1      Take frame at or first after this time.
+-[no]rmvsbds bool   yes     Remove constant bonded interactions with virtual
+                            sites
+-maxwarn     int    3       Number of allowed warnings during input
+                            processing. Not for normal use and may generate
+                            unstable systems
+-[no]zero    bool   no      Set parameters for bonded interactions without
+                            defaults to zero instead of generating an error
+-[no]renum   bool   yes     Renumber atomtypes and minimize number of
+                            atomtypes
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'cpp'
+Ignoring obsolete mdp entry 'andersen_seed'
+
+NOTE 1 [file md_pull_eq.mdp]:
+  nstcomm < nstcalcenergy defeats the purpose of nstcalcenergy, setting
+  nstcomm to nstcalcenergy
+
+
+NOTE 2 [file md_pull_eq.mdp]:
+  The Berendsen thermostat does not generate the correct kinetic energy
+  distribution. You might want to consider using the V-rescale thermostat.
+
+
+WARNING 1 [file md_pull_eq.mdp]:
+  For proper integration of the Berendsen barostat, tau-p (0.5) should be
+  at least 10 times larger than nstpcouple*dt (0.2)
+
+
+NOTE 3 [file md_pull_eq.mdp]:
+  The switch/shift interaction settings are just for compatibility; you
+  will get better performance from applying potential modifiers to your
+  interactions!
+
+
+
+NOTE 4 [file md_pull_eq.mdp]:
+  For energy conservation with switch/shift potentials, rlist should be 0.1
+  to 0.3 nm larger than rcoulomb.
+
+
+NOTE 5 [file md_pull_eq.mdp]:
+  For energy conservation with switch/shift potentials, rlist should be 0.1
+  to 0.3 nm larger than rvdw.
+
+Generated 0 of the 465 non-bonded parameter combinations
+Excluding 1 bonded neighbours molecule type '1VET-em_A'
+Excluding 1 bonded neighbours molecule type '1VET-em_B'
+Excluding 1 bonded neighbours molecule type 'NA+'
+Excluding 1 bonded neighbours molecule type 'W'
+Velocities were taken from a Maxwell distribution at 303 K
+Pull group 0 '1VET-em_A_backbone' has 122 atoms
+Pull group 1 '1VET-em_B_backbone' has 118 atoms
+Number of degrees of freedom in T-Coupling group Protein is 1405.72
+Number of degrees of freedom in T-Coupling group non-Protein is 13692.28
+Pull group  natoms  pbc atom  distance at start     reference at t=0
+       0       122       129 
+       1       118       381   2.325                 2.300              
+
+There were 5 notes
+
+There was 1 warning
+
+gcq#343: "Sitting on a rooftop watching molecules collide" (A Camp)
+
+This run will generate roughly 1 Mb of data

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for dir in d?.?*/md_sol_prod; do
+    cd $dir
+    ( echo COM-Pull-En; echo Potential ) | g_energy -f ener.edr -s topol.tpr
+    awk '$1+0==$1{print $1, sqrt($5^2+$6^2+$7^2);next}{print}' pullx.xvg > dist.xvg
+    cd ../..
+done

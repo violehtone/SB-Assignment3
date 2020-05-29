@@ -1,0 +1,21 @@
+;;; SULFATE
+;
+; note, ions are not to be taken too seriously using a CG presentation.
+; long range electrostatic interactions are absent, and for small ions
+; the first hydration shell is considered an implicit part of the CG ion. 
+
+;;;;;; HYDRATED SULFATE ION
+;
+; same particle type would represent HYDRATED CHLORIDE
+
+
+;;;;;; HYDRATED SULFATE ION
+
+[moleculetype]
+; molname 	nrexcl
+  SO4--		1
+
+[atoms]
+;id 	type 	resnr 	residu 	atom 	cgnr 	charge
+ 1 	Qa 	1 	ION 	SO4 	1 	-2.0 
+

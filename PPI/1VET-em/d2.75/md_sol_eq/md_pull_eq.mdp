@@ -1,0 +1,70 @@
+;
+; md_pull_eq.mdp
+; Generated automatically by: /home/vln490/sb-ass3-new/pmf_prak_dist_2020/src/MDP.py
+; User: vln490
+; Date: 2020-03-13
+; Time: 11:20:26.158586
+;
+
+; Preprocessing options:
+title			= md_pull_eq
+cpp			= /lib/cpp
+
+; Run control parameters:
+integrator		= md
+tinit			= 0.0
+dt			= 0.02
+nsteps			= 2000
+nstcomm			= 1
+comm_grps		= System
+
+; Output control options:
+nstxout			= 1000
+nstvout			= 1000
+nstfout			= 1000
+nstlog			= 1000
+nstenergy		= 1000
+nstxtcout		= 1000
+xtc_precision		= 1000
+energygrps		= Protein Non-Protein
+
+; Neighborsearching parameters:
+rlist			= 1.2
+
+; Options for electrostatics and vdw:
+coulombtype		= shift
+rcoulomb		= 1.2
+epsilon_r		= 15
+vdw_type		= shift
+rvdw_switch		= 0.9
+rvdw			= 1.2
+fourier_nx		= 10
+fourier_ny		= 10
+fourier_nz		= 10
+
+; Options for weak coupling algorithms:
+tcoupl			= Berendsen
+tc-grps			= Protein Non-Protein
+tau_t			= 0.1 0.1
+ref_t			= 303 303
+Pcoupl			= Berendsen
+Pcoupltype		= isotropic
+tau_p			= 0.5
+compressibility		= 1e-5
+ref_p			= 300.0
+andersen_seed		= 815131
+
+; Generate velocities for startup run:
+gen_vel			= yes
+gen_temp		= 303
+gen_seed		= 171533
+
+; Pull stuff:
+pull			= constraint
+pull_geometry		= distance
+pull_group0		= 1VET-em_A_backbone
+pull_group1		= 1VET-em_B_backbone
+pull_nstxout		= 0
+pull_nstfout		= 5
+pull_init1		= 2.75
+

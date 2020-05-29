@@ -1,0 +1,24 @@
+; Here should be (first line) the number of residues 
+; and then foreach of them the name # of atoms in the 
+; atomistic description and same for the CG description
+20
+GLY 4 1
+ALA 5 1
+CYS 6 2 
+VAL 7 2
+LEU 8 2
+ILE 8 2
+MET 8 2
+PRO 7 2
+ASN 8 2
+GLN 9 2
+LYS 9 3
+ASP 8 2
+GLU 9 2
+THR 7 2
+SER 6 2
+ARG 11 3
+HIS 10 4
+PHE 11 4
+TYR 12 4
+TRP 14 5

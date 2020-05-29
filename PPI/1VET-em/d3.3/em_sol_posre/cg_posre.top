@@ -1,0 +1,27 @@
+;
+;cg_posre | MARTINI 2.1
+;
+
+; Force field:
+#include "martini_v2.1.itp"
+#include "martini_v2.0_ions.itp"
+
+#include "1VET-em_A_w_elbnds.itp"
+#ifdef POSRES
+#include "1VET-em_A_posre.itp"
+#endif
+#include "1VET-em_B_w_elbnds.itp"
+#ifdef POSRES
+#include "1VET-em_B_posre.itp"
+#endif
+
+[ system ]
+; Name
+1VET-em
+
+[ molecules ]
+; Compound	Nmol
+1VET-em_A	1
+1VET-em_B	1
+NA+		1
+W		6698

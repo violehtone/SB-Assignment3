@@ -1,0 +1,95 @@
+                         :-)  G  R  O  M  A  C  S  (-:
+
+                Gravel Rubs Often Many Awfully Cauterized Sores
+
+                            :-)  VERSION 4.6.7  (-:
+
+        Contributions from Mark Abraham, Emile Apol, Rossen Apostolov, 
+           Herman J.C. Berendsen, Aldert van Buuren, Pär Bjelkmar,  
+     Rudi van Drunen, Anton Feenstra, Gerrit Groenhof, Christoph Junghans, 
+        Peter Kasson, Carsten Kutzner, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+         Copyright (c) 2001-2012,2013, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+       modify it under the terms of the GNU Lesser General Public License
+        as published by the Free Software Foundation; either version 2.1
+             of the License, or (at your option) any later version.
+
+                 :-)  /usr/local/gromacs/4.6.7/bin/genbox  (-:
+
+Option     Filename  Type         Description
+------------------------------------------------------------
+ -cp 1VET-em_cg_d2.4_cntr.gro  Input, Opt!  Structure file: gro g96 pdb tpr
+                                   etc.
+ -cs     spc216.gro  Input, Opt., Lib. Structure file: gro g96 pdb tpr etc.
+ -ci /home/vln490/sb-ass3-new/pmf_prak_dist_2020/MFF/structures/na+.gro 
+                                   Input, Opt!  Structure file: gro g96 pdb
+                                   tpr etc.
+  -o 1VET-em_cg_d2.4_cntr_neutral.gro  Output       Structure file: gro g96
+                                   pdb etc.
+  -p      topol.top  In/Out, Opt. Topology file
+
+Option       Type   Value   Description
+------------------------------------------------------
+-[no]h       bool   no      Print help info and quit
+-[no]version bool   no      Print version info and quit
+-nice        int    19      Set the nicelevel
+-box         vector 0 0 0   Box size
+-nmol        int    1       Number of extra molecules to insert
+-try         int    1000    Try inserting -nmol times -try times
+-seed        int    1997    Random generator seed
+-vdwd        real   0.19    Default van der Waals distance
+-shell       real   0       Thickness of optional water layer around solute
+-maxsol      int    0       Maximum number of solvent molecules to add if
+                            they fit in the box. If zero (default) this is
+                            ignored
+-[no]vel     bool   no      Keep velocities from input solute and solvent
+
+Reading solute configuration
+1VET-em_cg
+Containing 505 atoms in 240 residues
+Initialising van der waals distances...
+Reading molecule configuration 
+NA+
+Containing 1 atoms in 1 residue
+Initialising van der waals distances...
+Try 0box_margin = 0.33
+nri = 480, nrj = 2090
+Checking Protein-Solvent overlap: success (now 506 atoms)!
+Added 1 molecules (out of 1 requested) of ION
+Writing generated configuration to 1VET-em_cg_d2.4_cntr_neutral.gro
+1VET-em_cg
+
+Output configuration contains 506 atoms in 241 residues
+Volume                 :     635.777 (nm^3)
+Density                :     29.0093 (g/l)
+Number of SOL molecules:      0   
+
+
+gcq#322: "The Feeling of Power was Intoxicating, Magic" (Frida Hyvonen)
+
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary.
+
+Neighborsearching with a cut-off of 0.57
+Table routines are used for coulomb: FALSE
+Table routines are used for vdw:     FALSE
+Cut-off's:   NS: 0.57   Coulomb: 0.57   LJ: 0.57
+System total charge: 0.000
+Potential shift: LJ r^-12: 0.000 r^-6 0.000, Coulomb 0.000
+Note: The available nonbonded kernels do not support water optimization - disabling.
+
+Grid: 17 x 17 x 12 cells

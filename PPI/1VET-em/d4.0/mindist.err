@@ -1,0 +1,84 @@
+                         :-)  G  R  O  M  A  C  S  (-:
+
+                              S  C  A  M  O  R  G
+
+                            :-)  VERSION 4.6.7  (-:
+
+        Contributions from Mark Abraham, Emile Apol, Rossen Apostolov, 
+           Herman J.C. Berendsen, Aldert van Buuren, Pär Bjelkmar,  
+     Rudi van Drunen, Anton Feenstra, Gerrit Groenhof, Christoph Junghans, 
+        Peter Kasson, Carsten Kutzner, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+         Copyright (c) 2001-2012,2013, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+       modify it under the terms of the GNU Lesser General Public License
+        as published by the Free Software Foundation; either version 2.1
+             of the License, or (at your option) any later version.
+
+                :-)  /usr/local/gromacs/4.6.7/bin/g_mindist  (-:
+
+Option     Filename  Type         Description
+------------------------------------------------------------
+  -f 1VET-em_cg.gro  Input        Trajectory: xtc trr trj gro g96 pdb cpt
+  -s      topol.tpr  Input, Opt.  Structure+mass(db): tpr tpb tpa gro g96 pdb
+  -n 1VET-em_cg.ndx  Input, Opt!  Index file
+ -od    mindist.xvg  Output       xvgr/xmgr file
+ -on    numcont.xvg  Output, Opt. xvgr/xmgr file
+  -o   atm-pair.out  Output, Opt. Generic output file
+ -ox    mindist.xtc  Output, Opt. Trajectory: xtc trr trj gro g96 pdb
+ -or mindistres.xvg  Output, Opt. xvgr/xmgr file
+
+Option       Type   Value   Description
+------------------------------------------------------
+-[no]h       bool   no      Print help info and quit
+-[no]version bool   no      Print version info and quit
+-nice        int    19      Set the nicelevel
+-b           time   0       First frame (ps) to read from trajectory
+-e           time   0       Last frame (ps) to read from trajectory
+-dt          time   0       Only use frame when t MOD dt = first time (ps)
+-tu          enum   ps      Time unit: fs, ps, ns, us, ms or s
+-[no]w       bool   no      View output .xvg, .xpm, .eps and .pdb files
+-xvg         enum   xmgrace  xvg plot formatting: xmgrace, xmgr or none
+-[no]matrix  bool   no      Calculate half a matrix of group-group distances
+-[no]max     bool   no      Calculate *maximum* distance instead of minimum
+-d           real   0.6     Distance for contacts
+-[no]group   bool   no      Count contacts with multiple atoms in the first
+                            group as one
+-[no]pi      bool   no      Calculate minimum distance with periodic images
+-[no]split   bool   no      Split graph where time is zero
+-ng          int    1       Number of secondary groups to compute distance to
+                            a central group
+-[no]pbc     bool   yes     Take periodic boundary conditions into account
+-[no]respertime bool   no      When writing per-residue distances, write
+                            distance for each time point
+-[no]printresname bool   no      Write residue names
+
+Group     0 (         System) has   505 elements
+Group     1 (        Protein) has   505 elements
+Group     2 (      Protein-H) has   505 elements
+Group     3 (        C-alpha) has     0 elements
+Group     4 (       Backbone) has     0 elements
+Group     5 (      MainChain) has     0 elements
+Group     6 (   MainChain+Cb) has     0 elements
+Group     7 (    MainChain+H) has     0 elements
+Group     8 (      SideChain) has   505 elements
+Group     9 (    SideChain-H) has   505 elements
+Group    10 (      1VET-em_A) has   265 elements
+Group    11 (1VET-em_A_backbone) has   122 elements
+Group    12 (      1VET-em_B) has   240 elements
+Group    13 (1VET-em_B_backbone) has   118 elements
+Select a group: Select a group: Reading frames from gro file '1VET-em_cg', 505 atoms.
+Reading frame       0 time    0.000   Last frame          0 time    0.000   
+
+gcq#173: "That Was Really Cool" (Butthead)
+
+Selected 10: '1VET-em_A'
+Selected 12: '1VET-em_B'

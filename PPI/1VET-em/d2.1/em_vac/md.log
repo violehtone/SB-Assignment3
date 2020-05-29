@@ -1,0 +1,751 @@
+Log file opened on Tue Mar 10 17:05:38 2020
+Host: pc-036945.clients.vu.nl  pid: 14903  nodeid: 0  nnodes:  1
+Gromacs version:    VERSION 4.6.7
+Precision:          single
+Memory model:       64 bit
+MPI library:        thread_mpi
+OpenMP support:     enabled
+GPU support:        disabled
+invsqrt routine:    gmx_software_invsqrt(x)
+CPU acceleration:   AVX_256
+FFT library:        fftw-3.3.3-sse2
+Large file support: enabled
+RDTSCP usage:       enabled
+Built on:           Mon Aug 22 12:47:47 CEST 2016
+Built by:           root@co7-3.clients.vu.nl [CMAKE]
+Build OS/arch:      Linux 3.10.0-327.28.2.el7.x86_64 x86_64
+Build CPU vendor:   GenuineIntel
+Build CPU brand:    Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
+Build CPU family:   6   Model: 58   Stepping: 9
+Build CPU features: aes apic avx clfsh cmov cx8 cx16 f16c lahf_lm mmx msr nonstop_tsc pcid pclmuldq popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+C compiler:         /usr/bin/cc GNU cc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-4)
+C compiler flags:   -mavx    -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wall -Wno-unused -Wunused-value -Wno-unused-parameter -Wno-array-bounds -Wno-maybe-uninitialized -Wno-strict-overflow   -fomit-frame-pointer -funroll-all-loops -fexcess-precision=fast  -O3 -DNDEBUG
+
+
+                         :-)  G  R  O  M  A  C  S  (-:
+
+               GRoups of Organic Molecules in ACtion for Science
+
+                            :-)  VERSION 4.6.7  (-:
+
+        Contributions from Mark Abraham, Emile Apol, Rossen Apostolov, 
+           Herman J.C. Berendsen, Aldert van Buuren, Pär Bjelkmar,  
+     Rudi van Drunen, Anton Feenstra, Gerrit Groenhof, Christoph Junghans, 
+        Peter Kasson, Carsten Kutzner, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+         Copyright (c) 2001-2012,2013, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+       modify it under the terms of the GNU Lesser General Public License
+        as published by the Free Software Foundation; either version 2.1
+             of the License, or (at your option) any later version.
+
+                  :-)  /usr/local/gromacs/4.6.7/bin/mdrun  (-:
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator           = steep
+   nsteps               = 10000
+   init-step            = 0
+   cutoff-scheme        = Group
+   ns_type              = Grid
+   nstlist              = 10
+   ndelta               = 2
+   nstcomm              = 100
+   comm-mode            = Linear
+   nstlog               = 100
+   nstxout              = 100
+   nstvout              = 100
+   nstfout              = 0
+   nstcalcenergy        = 100
+   nstenergy            = 100
+   nstxtcout            = 100
+   init-t               = 0
+   delta-t              = 0.002
+   xtcprec              = 1000
+   fourierspacing       = 0.12
+   nkx                  = 10
+   nky                  = 10
+   nkz                  = 10
+   pme-order            = 4
+   ewald-rtol           = 1e-05
+   ewald-geometry       = 0
+   epsilon-surface      = 0
+   optimize-fft         = FALSE
+   ePBC                 = xyz
+   bPeriodicMols        = FALSE
+   bContinuation        = FALSE
+   bShakeSOR            = FALSE
+   etc                  = No
+   bPrintNHChains       = FALSE
+   nsttcouple           = -1
+   epc                  = No
+   epctype              = Isotropic
+   nstpcouple           = -1
+   tau-p                = 1
+   ref-p (3x3):
+      ref-p[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   compress (3x3):
+      compress[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compress[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compress[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   refcoord-scaling     = No
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   verlet-buffer-drift  = 0.005
+   rlist                = 1.2
+   rlistlong            = 1.2
+   nstcalclr            = 0
+   rtpi                 = 0.05
+   coulombtype          = Shift
+   coulomb-modifier     = None
+   rcoulomb-switch      = 0
+   rcoulomb             = 1.2
+   vdwtype              = Shift
+   vdw-modifier         = None
+   rvdw-switch          = 0.9
+   rvdw                 = 1.2
+   epsilon-r            = 15
+   epsilon-rf           = inf
+   tabext               = 1
+   implicit-solvent     = No
+   gb-algorithm         = Still
+   gb-epsilon-solvent   = 80
+   nstgbradii           = 1
+   rgbradii             = 1
+   gb-saltconc          = 0
+   gb-obc-alpha         = 1
+   gb-obc-beta          = 0.8
+   gb-obc-gamma         = 4.85
+   gb-dielectric-offset = 0.009
+   sa-algorithm         = Ace-approximation
+   sa-surface-tension   = 2.05016
+   DispCorr             = No
+   bSimTemp             = FALSE
+   free-energy          = no
+   nwall                = 0
+   wall-type            = 9-3
+   wall-atomtype[0]     = -1
+   wall-atomtype[1]     = -1
+   wall-density[0]      = 0
+   wall-density[1]      = 0
+   wall-ewald-zfac      = 3
+   pull                 = no
+   rotation             = FALSE
+   disre                = No
+   disre-weighting      = Conservative
+   disre-mixed          = FALSE
+   dr-fc                = 1000
+   dr-tau               = 0
+   nstdisreout          = 100
+   orires-fc            = 0
+   orires-tau           = 0
+   nstorireout          = 100
+   dihre-fc             = 0
+   em-stepsize          = 0.01
+   em-tol               = 550
+   niter                = 20
+   fc-stepsize          = 0
+   nstcgsteep           = 1000
+   nbfgscorr            = 10
+   ConstAlg             = Lincs
+   shake-tol            = 0.0001
+   lincs-order          = 4
+   lincs-warnangle      = 30
+   lincs-iter           = 1
+   bd-fric              = 0
+   ld-seed              = 1993
+   cos-accel            = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   adress               = FALSE
+   userint1             = 0
+   userint2             = 0
+   userint3             = 0
+   userint4             = 0
+   userreal1            = 0
+   userreal2            = 0
+   userreal3            = 0
+   userreal4            = 0
+grpopts:
+   nrdf:        1407
+   ref-t:           0
+   tau-t:           0
+anneal:          No
+ann-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+   efield-x:
+      n = 0
+   efield-xt:
+      n = 0
+   efield-y:
+      n = 0
+   efield-yt:
+      n = 0
+   efield-z:
+      n = 0
+   efield-zt:
+      n = 0
+   bQMMM                = FALSE
+   QMconstraints        = 0
+   QMMMscheme           = 0
+   scalefactor          = 1
+qm-opts:
+   ngQM                 = 0
+
+Initializing Domain Decomposition on 4 nodes
+Dynamic load balancing: no
+Will sort the charge groups at every domain (re)decomposition
+Initial maximum inter charge-group distances:
+    two-body bonded interactions: 1.087 nm, Bond, atoms 325 332
+  multi-body bonded interactions: 0.760 nm, Proper Dih., atoms 249 255
+Minimum cell size due to bonded interactions: 0.836 nm
+Maximum distance for 5 constraints, at 120 deg. angles, all-trans: 1.350 nm
+Estimated maximum distance required for P-LINCS: 1.350 nm
+This distance will limit the DD cell size, you can override this with -rcon
+Optimizing the DD grid for 4 cells with a minimum initial size of 1.350 nm
+The maximum allowed number of cells is: X 5 Y 5 Z 4
+Domain decomposition grid 2 x 2 x 1, separate PME nodes 0
+Domain decomposition nodeid 0, coordinates 0 0 0
+
+Using 4 MPI threads
+
+Detecting CPU-specific acceleration.
+Present hardware specification:
+Vendor: GenuineIntel
+Brand:  Intel(R) Core(TM) i5-6600 CPU @ 3.30GHz
+Family:  6  Model: 94  Stepping:  3
+Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+Acceleration most likely to fit this hardware: AVX_256
+Acceleration selected at GROMACS compile time: AVX_256
+
+Table routines are used for coulomb: TRUE
+Table routines are used for vdw:     TRUE
+Using shifted Lennard-Jones, switch between 0.9 and 1.2 nm
+Cut-off's:   NS: 1.2   Coulomb: 1.2   LJ: 1.2
+System total charge: 0.000
+Generated table with 1100 data points for Shift.
+Tabscale = 500 points/nm
+Generated table with 1100 data points for LJ6Shift.
+Tabscale = 500 points/nm
+Generated table with 1100 data points for LJ12Shift.
+Tabscale = 500 points/nm
+Potential shift: LJ r^-12: 0.000 r^-6 0.000
+Removing pbc first time
+Pinning threads with an auto-selected logical core stride of 1
+
+Initializing Parallel LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 116-122
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 108
+There are inter charge-group constraints,
+will communicate selected coordinates each lincs iteration
+65 constraints are involved in constraint triangles,
+will apply an additional matrix expansion of order 4 for couplings
+between constraints inside triangles
+
+Linking all bonded interactions to atoms
+
+The initial number of communication pulses is: X 1 Y 1
+The initial domain decomposition cell size is: X 3.82 nm Y 3.82 nm
+
+The maximum allowed distance for charge groups involved in interactions is:
+                 non-bonded interactions           1.200 nm
+            two-body bonded interactions  (-rdd)   1.200 nm
+          multi-body bonded interactions  (-rdd)   1.200 nm
+  atoms separated by up to 5 constraints  (-rcon)  3.819 nm
+
+
+Making 2D domain decomposition grid 2 x 2 x 1, home cell index 0 0 0
+
+Initiating Steepest Descents
+Charge group distribution at step 0: 134 107 128 137
+Grid: 9 x 9 x 6 cells
+Started Steepest Descents on node 0 Tue Mar 10 17:05:38 2020
+
+Steepest Descents:
+   Tolerance (Fmax)   =  5.50000e+02
+   Number of steps    =        10000
+
+           Step           Time         Lambda
+              0        0.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.80737e+03    9.41529e+01    1.09307e+03    8.00742e+02    5.31443e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    5.56310e+06   -4.33199e+01    5.57191e+06   -2.12678e+04    8.15848e-04
+
+DD  step 0 load imb.: force 27.6%
+
+           Step           Time         Lambda
+              1        1.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.80626e+03    9.42920e+01    1.09389e+03    8.00733e+02    5.28893e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    3.19501e+06   -4.33174e+01    3.20381e+06   -1.75545e+04    1.15779e-06
+
+           Step           Time         Lambda
+              2        2.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.80244e+03    9.47600e+01    1.09331e+03    8.00694e+02    5.27455e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    1.84396e+06   -4.33081e+01    1.85276e+06   -8.84769e+03    7.48270e-07
+
+           Step           Time         Lambda
+              3        3.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.80023e+03    9.58413e+01    1.09343e+03    8.00513e+02    5.26878e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    9.06260e+05   -4.32786e+01    9.15059e+05   -8.61310e+02    8.76374e-07
+
+           Step           Time         Lambda
+              4        4.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.80164e+03    9.75966e+01    1.09496e+03    7.99730e+02    5.27688e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    4.14333e+05   -4.32195e+01    4.23137e+05    5.20462e+02    1.57465e-06
+
+           Step           Time         Lambda
+              5        5.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.80739e+03    1.01373e+02    1.09812e+03    7.96645e+02    5.30377e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    1.78780e+05   -4.30721e+01    1.87594e+05    2.46828e+02    1.63964e-06
+
+           Step           Time         Lambda
+              6        6.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.81829e+03    1.10720e+02    1.10437e+03    7.87877e+02    5.34038e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    7.10976e+04   -4.26341e+01    7.99297e+04    2.23228e+02    2.69055e-06
+
+           Step           Time         Lambda
+              7        7.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.82260e+03    1.32303e+02    1.11686e+03    7.71504e+02    5.33989e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    2.64874e+04   -4.13232e+01    3.53427e+04    1.67450e+02    5.18723e-06
+
+           Step           Time         Lambda
+              8        8.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.74978e+03    1.62245e+02    1.11614e+03    7.36062e+02    5.19465e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    1.02145e+04   -3.79107e+01    1.89927e+04    8.24458e+01    9.49621e-06
+
+           Step           Time         Lambda
+              9        9.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.35843e+03    2.04831e+02    1.08795e+03    6.49599e+02    5.01636e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+    2.17164e+03   -3.36359e+01    1.04890e+04    5.14110e+01    3.47532e-05
+
+           Step           Time         Lambda
+             10       10.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    5.06174e+03    2.99081e+02    9.81647e+02    4.74258e+02    5.06869e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -1.18997e+03   -3.32209e+01    5.64423e+03    2.76668e+01    4.83014e-06
+
+           Step           Time         Lambda
+             11       11.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    4.97752e+03    3.03115e+02    9.71816e+02    4.66638e+02    5.07188e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -2.76428e+03   -3.31704e+01    3.97236e+03    2.70219e+01    9.60589e-07
+
+           Step           Time         Lambda
+             12       12.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    2.94886e+03    4.77750e+02    8.28639e+02    3.30933e+02    5.25487e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -3.57116e+03   -3.36602e+01    1.03392e+03    1.79269e+01    2.49720e-05
+
+           Step           Time         Lambda
+             13       13.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    2.89068e+03    4.82329e+02    8.17582e+02    3.24327e+02    5.21725e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -4.64509e+03   -3.40105e+01   -1.12013e+02    1.70868e+01    9.97481e-07
+
+           Step           Time         Lambda
+             14       14.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    2.54755e+03    5.17912e+02    7.59723e+02    2.85719e+02    5.01419e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -5.19649e+03   -3.63626e+01   -1.07181e+03    1.45566e+01    4.30884e-06
+
+           Step           Time         Lambda
+             15       15.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    2.06190e+03    5.69787e+02    7.20427e+02    2.53955e+02    4.89907e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -5.56023e+03   -3.85226e+01   -1.94369e+03    1.25366e+01    2.25539e-06
+
+           Step           Time         Lambda
+             16       16.00000        0.00000
+
+           Step           Time         Lambda
+             17       17.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    1.84448e+03    6.00412e+02    6.94676e+02    2.36903e+02    4.78851e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -5.94367e+03   -3.98558e+01   -2.55917e+03    1.16770e+01    1.37448e-06
+
+           Step           Time         Lambda
+             18       18.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    1.41832e+03    6.60582e+02    6.66671e+02    2.10346e+02    4.56348e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -5.97127e+03   -4.23104e+01   -3.01203e+03    1.04376e+01    3.55733e-06
+
+           Step           Time         Lambda
+             19       19.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    1.32904e+03    6.80312e+02    6.61058e+02    2.03710e+02    4.47388e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -6.47619e+03   -4.30097e+01   -3.60034e+03    1.00907e+01    1.17658e-06
+
+           Step           Time         Lambda
+             20       20.00000        0.00000
+
+           Step           Time         Lambda
+             21       21.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    1.07691e+03    7.10592e+02    6.26828e+02    1.81141e+02    4.24944e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -6.72566e+03   -4.50367e+01   -4.13273e+03    9.68769e+00    3.65264e-06
+
+           Step           Time         Lambda
+             22       22.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    9.48379e+02    7.35511e+02    6.33885e+02    1.72309e+02    4.04168e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -6.76972e+03   -4.61828e+01   -4.28540e+03    8.71183e+00    2.07891e-06
+
+           Step           Time         Lambda
+             23       23.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    9.02641e+02    7.31260e+02    6.00858e+02    1.67190e+02    4.03200e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -6.79518e+03   -4.67623e+01   -4.39967e+03    8.64163e+00    6.38143e-06
+
+           Step           Time         Lambda
+             24       24.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    8.66727e+02    7.38082e+02    5.95502e+02    1.59703e+02    3.99714e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.00144e+03   -4.68343e+01   -4.64829e+03    8.03336e+00    1.30338e-06
+
+           Step           Time         Lambda
+             25       25.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    7.99615e+02    7.34524e+02    5.80702e+02    1.51600e+02    3.99296e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.06428e+03   -4.74978e+01   -4.80540e+03    8.25463e+00    1.69587e-06
+
+           Step           Time         Lambda
+             26       26.00000        0.00000
+
+           Step           Time         Lambda
+             27       27.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    7.55520e+02    7.41698e+02    5.73704e+02    1.47712e+02    3.73445e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.25672e+03   -4.73273e+01   -5.04807e+03    7.72614e+00    1.22385e-06
+
+           Step           Time         Lambda
+             28       28.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.30621e+02    7.38239e+02    5.51118e+02    1.43197e+02    3.42153e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.26151e+03   -4.91894e+01   -5.21331e+03    8.89168e+00    1.06027e-05
+
+           Step           Time         Lambda
+             29       29.00000        0.00000
+
+           Step           Time         Lambda
+             30       30.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.17440e+02    7.36171e+02    5.50759e+02    1.34217e+02    3.41280e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.34310e+03   -4.90611e+01   -5.31944e+03    8.39128e+00    1.10757e-05
+
+           Step           Time         Lambda
+             31       31.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    6.04223e+02    7.35679e+02    5.45016e+02    1.35673e+02    3.29006e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.32923e+03   -4.92337e+01   -5.32497e+03    8.80082e+00    1.55003e-04
+
+           Step           Time         Lambda
+             32       32.00000        0.00000
+
+           Step           Time         Lambda
+             33       33.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    5.92926e+02    7.32150e+02    5.42804e+02    1.33432e+02    3.29502e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.47579e+03   -4.92963e+01   -5.49082e+03    7.60175e+00    1.54938e-05
+
+           Step           Time         Lambda
+             34       34.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    5.41312e+02    7.32132e+02    5.36765e+02    1.30416e+02    3.07735e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.53317e+03   -4.97449e+01   -5.61152e+03    7.45935e+00    2.51901e-06
+
+           Step           Time         Lambda
+             35       35.00000        0.00000
+
+           Step           Time         Lambda
+             36       36.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    5.29743e+02    7.23725e+02    5.32414e+02    1.29134e+02    3.03621e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.56292e+03   -4.98578e+01   -5.66740e+03    7.60686e+00    1.26143e-06
+
+           Step           Time         Lambda
+             37       37.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    5.14585e+02    7.18149e+02    5.28077e+02    1.26645e+02    2.88955e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.58100e+03   -5.00357e+01   -5.71469e+03    7.45221e+00    8.97382e-06
+
+           Step           Time         Lambda
+             38       38.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    4.93650e+02    7.11817e+02    5.22469e+02    1.25426e+02    2.88897e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.56939e+03   -5.01992e+01   -5.73734e+03    8.16390e+00    3.25052e-05
+
+           Step           Time         Lambda
+             39       39.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    4.86891e+02    7.10765e+02    5.21213e+02    1.23828e+02    2.75180e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.61640e+03   -5.02898e+01   -5.79648e+03    7.34846e+00    4.79969e-05
+
+           Step           Time         Lambda
+             40       40.00000        0.00000
+
+           Step           Time         Lambda
+             41       41.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    4.76443e+02    7.07905e+02    5.17343e+02    1.23411e+02    2.73979e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.65605e+03   -5.03715e+01   -5.85392e+03    7.08563e+00    8.57823e-06
+
+           Step           Time         Lambda
+             42       42.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    4.59984e+02    7.06861e+02    5.15564e+02    1.21124e+02    2.66867e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.68451e+03   -5.05280e+01   -5.90482e+03    6.97705e+00    1.49643e-06
+
+           Step           Time         Lambda
+             43       43.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    4.46506e+02    7.01947e+02    5.14497e+02    1.27523e+02    2.56121e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.68049e+03   -5.06291e+01   -5.91503e+03    7.29135e+00    4.13482e-06
+
+           Step           Time         Lambda
+             44       44.00000        0.00000
+
+           Step           Time         Lambda
+             45       45.00000        0.00000
+
+   Energies (kJ/mol)
+           Bond        G96Bond       G96Angle    Proper Dih.  Improper Dih.
+    4.41166e+02    6.99076e+02    5.08180e+02    1.18489e+02    2.52046e+01
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)   Constr. rmsd
+   -7.73028e+03   -5.06702e+01   -5.98884e+03    6.87341e+00    2.86288e-06
+
+
+Steepest Descents converged to Fmax < 550 in 46 steps
+Potential Energy  = -5.9888389e+03
+Maximum force     =  3.3405078e+02 on atom 158
+Norm of force     =  5.0573593e+01
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ NB VdW [V&F]                            43.225960          43.226    42.1
+ NB VdW & Elec. [V&F]                     1.076062           1.076     1.0
+ NS-Pairs                                 2.227481          46.777    45.6
+ Reset In Box                             0.023276           0.070     0.1
+ CG-CoM                                   0.027830           0.083     0.1
+ Bonds                                    0.076682           4.524     4.4
+ Angles                                   0.023000           3.864     3.8
+ Propers                                  0.003450           0.790     0.8
+ Impropers                                0.001012           0.210     0.2
+ Virial                                   0.031556           0.568     0.6
+ Lincs                                    0.011245           0.675     0.7
+ Lincs-Mat                                0.139392           0.558     0.5
+ Constraint-Vir                           0.005625           0.135     0.1
+-----------------------------------------------------------------------------
+ Total                                                     102.557   100.0
+-----------------------------------------------------------------------------
+
+
+    D O M A I N   D E C O M P O S I T I O N   S T A T I S T I C S
+
+ av. #atoms communicated per step for force:  2 x 448.4
+ av. #atoms communicated per step for LINCS:  2 x 20.9
+
+
+     R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+ Computing:         Nodes   Th.     Count  Wall t (s)     G-Cycles       %
+-----------------------------------------------------------------------------
+ Domain decomp.         4    1         54       0.014        0.347    14.6
+ DD comm. load          4    1          1       0.000        0.000     0.0
+ Neighbor search        4    1         46       0.013        0.331    14.0
+ Comm. coord.           4    1         46       0.000        0.011     0.5
+ Force                  4    1         46       0.004        0.099     4.2
+ Wait + Comm. F         4    1         46       0.007        0.181     7.6
+ Constraints            4    1         91       0.004        0.107     4.5
+ Comm. energies         4    1         46       0.000        0.011     0.5
+ Rest                   4                       0.052        1.285    54.2
+-----------------------------------------------------------------------------
+ Total                  4                       0.096        2.372   100.0
+-----------------------------------------------------------------------------
+
+               Core t (s)   Wall t (s)        (%)
+       Time:        0.370        0.096      384.5
+               (steps/hour)
+Performance:      1720876.5
+Finished mdrun on node 0 Tue Mar 10 17:05:39 2020

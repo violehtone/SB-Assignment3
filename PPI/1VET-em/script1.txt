@@ -1,0 +1,7 @@
+#!/bin/sh
+for i in d[0-9].[0-9]*/md_sol_prod; do
+    echo $i
+    cd $i
+    mdrun -nt 1 -v
+    cd ../..
+done

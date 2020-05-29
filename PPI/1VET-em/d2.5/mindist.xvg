@@ -1,0 +1,20 @@
+# This file was created Tue Mar 10 17:06:10 2020
+# by the following command:
+# /usr/local/gromacs/4.6.7/bin/g_mindist -f 1VET-em_cg.gro -n 1VET-em_cg.ndx 
+#
+# g_mindist is part of G R O M A C S:
+#
+# GRowing Old MAkes el Chrono Sweat
+#
+@    title "Minimum Distance"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Distance (nm)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "1VET-em_A-1VET-em_B"
+0.000000e+00  3.538403e-01

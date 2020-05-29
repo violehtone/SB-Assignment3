@@ -1,0 +1,115 @@
+                         :-)  G  R  O  M  A  C  S  (-:
+
+                Gravel Rubs Often Many Awfully Cauterized Sores
+
+                            :-)  VERSION 4.6.7  (-:
+
+        Contributions from Mark Abraham, Emile Apol, Rossen Apostolov, 
+           Herman J.C. Berendsen, Aldert van Buuren, Pär Bjelkmar,  
+     Rudi van Drunen, Anton Feenstra, Gerrit Groenhof, Christoph Junghans, 
+        Peter Kasson, Carsten Kutzner, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+         Copyright (c) 2001-2012,2013, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+       modify it under the terms of the GNU Lesser General Public License
+        as published by the Free Software Foundation; either version 2.1
+             of the License, or (at your option) any later version.
+
+                :-)  /usr/local/gromacs/4.6.7/bin/editconf  (-:
+
+Option     Filename  Type         Description
+------------------------------------------------------------
+  -f 1VET-em_cg_d2.65.gro  Input        Structure file: gro g96 pdb tpr etc.
+  -n      index.ndx  Input, Opt.  Index file
+  -o 1VET-em_cg_d2.65_cntr.gro  Output, Opt! Structure file: gro g96 pdb etc.
+-mead      mead.pqr  Output, Opt. Coordinate file for MEAD
+ -bf      bfact.dat  Input, Opt.  Generic data file
+
+Option       Type   Value   Description
+------------------------------------------------------
+-[no]h       bool   no      Print help info and quit
+-[no]version bool   no      Print version info and quit
+-nice        int    0       Set the nicelevel
+-[no]w       bool   no      View output .xvg, .xpm, .eps and .pdb files
+-[no]ndef    bool   no      Choose output from default index groups
+-bt          enum   dodecahedron  Box type for -box and -d: triclinic, cubic,
+                            dodecahedron or octahedron
+-box         vector 0 0 0   Box vector lengths (a,b,c)
+-angles      vector 90 90 90  Angles between the box vectors (bc,ac,ab)
+-d           real   1.35384  Distance between the solute and the box
+-[no]c       bool   yes     Center molecule in box (implied by -box and -d)
+-center      vector 0 0 0   Coordinates of geometrical center
+-aligncenter vector 0 0 0   Center of rotation for alignment
+-align       vector 0 0 0   Align to target vector
+-translate   vector 0 0 0   Translation
+-rotate      vector 0 0 0   Rotation around the X, Y and Z axes in degrees
+-[no]princ   bool   yes     Orient molecule(s) along their principal axes
+-scale       vector 1 1 1   Scaling factor
+-density     real   1000    Density (g/L) of the output box achieved by
+                            scaling
+-[no]pbc     bool   no      Remove the periodicity (make molecule whole again)
+-resnr       int    -1       Renumber residues starting from resnr
+-[no]grasp   bool   no      Store the charge of the atom in the B-factor
+                            field and the radius of the atom in the occupancy
+                            field
+-rvdw        real   0.12    Default Van der Waals radius (in nm) if one can
+                            not be found in the database or if no parameters
+                            are present in the topology file
+-[no]sig56   bool   no      Use rmin/2 (minimum in the Van der Waals
+                            potential) rather than sigma/2 
+-[no]vdwread bool   no      Read the Van der Waals radii from the file
+                            vdwradii.dat rather than computing the radii
+                            based on the force field
+-[no]atom    bool   no      Force B-factor attachment per atom
+-[no]legend  bool   no      Make B-factor legend
+-label       string A       Add chain label for all residues
+-[no]conect  bool   no      Add CONECT records to a .pdb file when written.
+                            Can only be done when a topology is present
+
+
+Select group for the determining the orientation
+Group     0 (         System) has   505 elements
+Group     1 (        Protein) has   505 elements
+Group     2 (      Protein-H) has   505 elements
+Group     3 (        C-alpha) has     0 elements
+Group     4 (       Backbone) has     0 elements
+Group     5 (      MainChain) has     0 elements
+Group     6 (   MainChain+Cb) has     0 elements
+Group     7 (    MainChain+H) has     0 elements
+Group     8 (      SideChain) has   505 elements
+Group     9 (    SideChain-H) has   505 elements
+Select a group: 
+gcq#85: "It's Because Of the Metric System" (Pulp Fiction)
+
+Read 505 atoms
+Volume: 0 nm^3, corresponds to roughly 0 electrons
+No velocities found
+    system size :  7.125  4.456  2.977 (nm)
+    diameter    :  7.192               (nm)
+    center      :  4.749  3.522  2.811 (nm)
+    box vectors :  0.000  0.000  0.000 (nm)
+    box angles  :   0.00   0.00   0.00 (degrees)
+    box volume  :   0.00               (nm^3)
+
+WARNING: Masses and atomic (Van der Waals) radii will be guessed
+         based on residue and atom names, since they could not be
+         definitively assigned from the information in your input
+         files. These guessed numbers might deviate from the mass
+         and radius of the atom type. Please check the output
+         files if necessary.
+
+Selected 0: 'System'
+new system size :  7.122  4.480  3.011
+    shift       :  2.676  3.903  0.689 (nm)
+new center      :  7.425  7.425  3.500 (nm)
+new box vectors :  9.900  9.900  9.900 (nm)
+new box angles  :  60.00  60.00  90.00 (degrees)
+new box volume  : 686.04               (nm^3)

@@ -1,0 +1,129 @@
+                         :-)  G  R  O  M  A  C  S  (-:
+
+                Gravel Rubs Often Many Awfully Cauterized Sores
+
+                            :-)  VERSION 4.6.7  (-:
+
+        Contributions from Mark Abraham, Emile Apol, Rossen Apostolov, 
+           Herman J.C. Berendsen, Aldert van Buuren, Pär Bjelkmar,  
+     Rudi van Drunen, Anton Feenstra, Gerrit Groenhof, Christoph Junghans, 
+        Peter Kasson, Carsten Kutzner, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+         Copyright (c) 2001-2012,2013, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+       modify it under the terms of the GNU Lesser General Public License
+        as published by the Free Software Foundation; either version 2.1
+             of the License, or (at your option) any later version.
+
+                 :-)  /usr/local/gromacs/4.6.7/bin/grompp  (-:
+
+Option     Filename  Type         Description
+------------------------------------------------------------
+  -f         em.mdp  Input        grompp input file with MD parameters
+ -po      mdout.mdp  Output       grompp input file with MD parameters
+  -c       conf.gro  Input        Structure file: gro g96 pdb tpr etc.
+  -r       conf.gro  Input, Opt.  Structure file: gro g96 pdb tpr etc.
+ -rb       conf.gro  Input, Opt.  Structure file: gro g96 pdb tpr etc.
+  -n      index.ndx  Input, Opt.  Index file
+  -p         cg.top  Input        Topology file
+ -pp  processed.top  Output, Opt. Topology file
+  -o      topol.tpr  Output       Run input file: tpr tpb tpa
+  -t       traj.trr  Input, Opt.  Full precision trajectory: trr trj cpt
+  -e       ener.edr  Input, Opt.  Energy file
+-ref     rotref.trr  In/Out, Opt. Full precision trajectory: trr trj cpt
+
+Option       Type   Value   Description
+------------------------------------------------------
+-[no]h       bool   no      Print help info and quit
+-[no]version bool   no      Print version info and quit
+-nice        int    0       Set the nicelevel
+-[no]v       bool   no      Be loud and noisy
+-time        real   -1      Take frame at or first after this time.
+-[no]rmvsbds bool   yes     Remove constant bonded interactions with virtual
+                            sites
+-maxwarn     int    1       Number of allowed warnings during input
+                            processing. Not for normal use and may generate
+                            unstable systems
+-[no]zero    bool   no      Set parameters for bonded interactions without
+                            defaults to zero instead of generating an error
+-[no]renum   bool   yes     Renumber atomtypes and minimize number of
+                            atomtypes
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'cpp'
+
+NOTE 1 [file em.mdp]:
+  nstcomm < nstcalcenergy defeats the purpose of nstcalcenergy, setting
+  nstcomm to nstcalcenergy
+
+
+NOTE 2 [file em.mdp]:
+  The switch/shift interaction settings are just for compatibility; you
+  will get better performance from applying potential modifiers to your
+  interactions!
+
+
+
+NOTE 3 [file em.mdp]:
+  For energy conservation with switch/shift potentials, rlist should be 0.1
+  to 0.3 nm larger than rcoulomb.
+
+
+NOTE 4 [file em.mdp]:
+  For energy conservation with switch/shift potentials, rlist should be 0.1
+  to 0.3 nm larger than rvdw.
+
+Generated 0 of the 465 non-bonded parameter combinations
+Excluding 1 bonded neighbours molecule type '1VET-em_A'
+Excluding 1 bonded neighbours molecule type '1VET-em_B'
+Excluding 1 bonded neighbours molecule type 'NA+'
+Warning: atom name 1 in cg.top and conf.gro does not match (BCQd - BN0)
+Warning: atom name 2 in cg.top and conf.gro does not match (BCP5 - BN0)
+Warning: atom name 3 in cg.top and conf.gro does not match (SCQa - SC1)
+Warning: atom name 4 in cg.top and conf.gro does not match (BCP5 - BN0)
+Warning: atom name 5 in cg.top and conf.gro does not match (SCQa - SC1)
+Warning: atom name 6 in cg.top and conf.gro does not match (BHNd - BN0)
+Warning: atom name 7 in cg.top and conf.gro does not match (SHAC1 - SC1)
+Warning: atom name 8 in cg.top and conf.gro does not match (BHNd - BN0)
+Warning: atom name 9 in cg.top and conf.gro does not match (SHC3 - SC1)
+Warning: atom name 10 in cg.top and conf.gro does not match (SHQd - SC2)
+Warning: atom name 11 in cg.top and conf.gro does not match (BHNd - BN0)
+Warning: atom name 12 in cg.top and conf.gro does not match (SHN0 - SC1)
+Warning: atom name 13 in cg.top and conf.gro does not match (SHQd - SC2)
+Warning: atom name 14 in cg.top and conf.gro does not match (BHNd - BN0)
+Warning: atom name 15 in cg.top and conf.gro does not match (SHSC4 - SC1)
+Warning: atom name 16 in cg.top and conf.gro does not match (SHSC4 - SC2)
+Warning: atom name 17 in cg.top and conf.gro does not match (SHSC4 - SC3)
+Warning: atom name 18 in cg.top and conf.gro does not match (BHN0 - BN0)
+Warning: atom name 19 in cg.top and conf.gro does not match (SHAC1 - SC1)
+Warning: atom name 20 in cg.top and conf.gro does not match (BHN0 - BN0)
+(more than 20 non-matching atom names)
+
+WARNING 1 [file cg.top, line 20]:
+  505 non-matching atom names
+  atom names from cg.top will be used
+  atom names from conf.gro will be ignored
+
+
+Number of degrees of freedom in T-Coupling group rest is 1407.00
+
+There were 4 notes
+
+There was 1 warning
+
+gcq#322: "The Feeling of Power was Intoxicating, Magic" (Frida Hyvonen)
+
+Analysing residue names:
+There are:   240    Protein residues
+There are:     1      Other residues
+Analysing Protein...
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+This run will generate roughly 2 Mb of data

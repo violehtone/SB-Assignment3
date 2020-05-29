@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in d[0-9].[0-9]*/md_sol_prod; do
+    echo $i
+    cd $i
+    python3 /home/vln490/sb-ass3-new/pmf_prak_dist_2020/src/script_q3-2.py -f distenergy.xvg
+    cd ../..
+done

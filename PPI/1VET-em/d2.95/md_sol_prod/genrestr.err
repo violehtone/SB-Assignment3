@@ -1,0 +1,88 @@
+                         :-)  G  R  O  M  A  C  S  (-:
+
+                   Great Red Oystrich Makes All Chemists Sane
+
+                            :-)  VERSION 4.6.7  (-:
+
+        Contributions from Mark Abraham, Emile Apol, Rossen Apostolov, 
+           Herman J.C. Berendsen, Aldert van Buuren, Pär Bjelkmar,  
+     Rudi van Drunen, Anton Feenstra, Gerrit Groenhof, Christoph Junghans, 
+        Peter Kasson, Carsten Kutzner, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+         Copyright (c) 2001-2012,2013, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+       modify it under the terms of the GNU Lesser General Public License
+        as published by the Free Software Foundation; either version 2.1
+             of the License, or (at your option) any later version.
+
+                :-)  /usr/local/gromacs/4.6.7/bin/genrestr  (-:
+
+Option     Filename  Type         Description
+------------------------------------------------------------
+  -f       conf.gro  Input        Structure file: gro g96 pdb tpr etc.
+  -n 1VET-em_cg_sol.ndx  Input, Opt!  Index file
+  -o 1VET-em_B_posre_raw.itp  Output       Include file for topology
+ -of     freeze.ndx  Output, Opt. Index file
+
+Option       Type   Value   Description
+------------------------------------------------------
+-[no]h       bool   no      Print help info and quit
+-[no]version bool   no      Print version info and quit
+-nice        int    0       Set the nicelevel
+-fc          vector 1000 1000 1000  Force constants (kJ/mol nm^2)
+-freeze      real   0       If the -of option or this one is given an index
+                            file will be written containing atom numbers of
+                            all atoms that have a B-factor less than the
+                            level given here
+-[no]disre   bool   no      Generate a distance restraint matrix for all the
+                            atoms in index
+-disre_dist  real   0.1     Distance range around the actual distance for
+                            generating distance restraints
+-disre_frac  real   0       Fraction of distance to be used as interval
+                            rather than a fixed distance. If the fraction of
+                            the distance that you specify here is less than
+                            the distance given in the previous option, that
+                            one is used instead.
+-disre_up2   real   1       Distance between upper bound for distance
+                            restraints, and the distance at which the force
+                            becomes constant (see manual)
+-cutoff      real   -1      Only generate distance restraints for atoms pairs
+                            within cutoff (nm)
+-[no]constr  bool   no      Generate a constraint matrix rather than distance
+                            restraints. Constraints of type 2 will be
+                            generated that do generate exclusions.
+
+
+Reading structure file
+Group     0 (         System) has  6159 elements
+Group     1 (        Protein) has   505 elements
+Group     2 (      Protein-H) has   505 elements
+Group     3 (        C-alpha) has     0 elements
+Group     4 (       Backbone) has     0 elements
+Group     5 (      MainChain) has     0 elements
+Group     6 (   MainChain+Cb) has     0 elements
+Group     7 (    MainChain+H) has     0 elements
+Group     8 (      SideChain) has   505 elements
+Group     9 (    SideChain-H) has   505 elements
+Group    10 (    Prot-Masses) has   505 elements
+Group    11 (    non-Protein) has  5654 elements
+Group    12 (          Other) has  5654 elements
+Group    13 (            ION) has     1 elements
+Group    14 (              W) has  5653 elements
+Group    15 (      1VET-em_A) has   265 elements
+Group    16 (1VET-em_A_backbone) has   122 elements
+Group    17 (      1VET-em_B) has   240 elements
+Group    18 (1VET-em_B_backbone) has   118 elements
+Select a group: 
+gcq#124: "Three Little Fonzies" (Pulp Fiction)
+
+Select group to position restrain
+Selected 17: '1VET-em_B'

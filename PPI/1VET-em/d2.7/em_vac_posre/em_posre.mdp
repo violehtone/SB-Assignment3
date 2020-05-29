@@ -1,0 +1,49 @@
+;
+; em_posre.mdp
+; Generated automatically by: /home/vln490/sb-ass3-new/pmf_prak_dist_2020/src/MDP.py
+; User: vln490
+; Date: 2020-03-10
+; Time: 17:06:27.700943
+;
+
+; Preprocessing options:
+title			= em_posre
+cpp			= /lib/cpp
+define			= -DPOSRES
+
+; Run control parameters:
+integrator		= steep
+tinit			= 0.0
+dt			= 0.002
+nsteps			= 10000
+em_tol			= 550
+emstep			= 0.01
+nstcomm			= 1
+comm_grps		= System
+
+; Output control options:
+nstxout			= 100
+nstvout			= 100
+nstlog			= 100
+nstenergy		= 100
+nstxtcout		= 100
+energygrps		= System
+
+; Neighborsearching parameters:
+rlist			= 1.2
+
+; Options for electrostatics and vdw:
+coulombtype		= shift
+rcoulomb		= 1.2
+epsilon_r		= 15
+vdw_type		= shift
+rvdw_switch		= 0.9
+rvdw			= 1.2
+fourier_nx		= 10
+fourier_ny		= 10
+fourier_nz		= 10
+
+; Options for weak coupling algorithms:
+tcoupl			= no
+Pcoupl			= no
+

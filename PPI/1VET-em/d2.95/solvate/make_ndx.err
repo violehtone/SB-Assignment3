@@ -1,0 +1,113 @@
+                         :-)  G  R  O  M  A  C  S  (-:
+
+            Georgetown Riga Oslo Madrid Amsterdam Chisinau Stockholm
+
+                            :-)  VERSION 4.6.7  (-:
+
+        Contributions from Mark Abraham, Emile Apol, Rossen Apostolov, 
+           Herman J.C. Berendsen, Aldert van Buuren, Pär Bjelkmar,  
+     Rudi van Drunen, Anton Feenstra, Gerrit Groenhof, Christoph Junghans, 
+        Peter Kasson, Carsten Kutzner, Per Larsson, Pieter Meulenhoff, 
+           Teemu Murtola, Szilard Pall, Sander Pronk, Roland Schulz, 
+                Michael Shirts, Alfons Sijbers, Peter Tieleman,
+
+               Berk Hess, David van der Spoel, and Erik Lindahl.
+
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+         Copyright (c) 2001-2012,2013, The GROMACS development team at
+        Uppsala University & The Royal Institute of Technology, Sweden.
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+       modify it under the terms of the GNU Lesser General Public License
+        as published by the Free Software Foundation; either version 2.1
+             of the License, or (at your option) any later version.
+
+                :-)  /usr/local/gromacs/4.6.7/bin/make_ndx  (-:
+
+Option     Filename  Type         Description
+------------------------------------------------------------
+  -f        out.gro  Input, Opt!  Structure file: gro g96 pdb tpr etc.
+  -n      index.ndx  Input, Opt., Mult. Index file
+  -o 1VET-em_cg_sol.ndx  Output       Index file
+
+Option       Type   Value   Description
+------------------------------------------------------
+-[no]h       bool   no      Print help info and quit
+-[no]version bool   no      Print version info and quit
+-nice        int    0       Set the nicelevel
+-natoms      int    0       set number of atoms (default: read from
+                            coordinate or index file)
+
+
+Reading structure file
+
+gcq#279: "Just a Minute While I Reinvent Myself" (Red Hot Chili Peppers)
+
+Going to read 0 old index file(s)
+Analysing residue names:
+There are:   240    Protein residues
+There are:  5654      Other residues
+Analysing Protein...
+Analysing residues not classified as Protein/DNA/RNA/Water and splitting into groups...
+
+  0 System              :  6159 atoms
+  1 Protein             :   505 atoms
+  2 Protein-H           :   505 atoms
+  3 C-alpha             :     0 atoms
+  4 Backbone            :     0 atoms
+  5 MainChain           :     0 atoms
+  6 MainChain+Cb        :     0 atoms
+  7 MainChain+H         :     0 atoms
+  8 SideChain           :   505 atoms
+  9 SideChain-H         :   505 atoms
+ 10 Prot-Masses         :   505 atoms
+ 11 non-Protein         :  5654 atoms
+ 12 Other               :  5654 atoms
+ 13 ION                 :     1 atoms
+ 14 W                   :  5653 atoms
+
+ nr : group       !   'name' nr name   'splitch' nr    Enter: list groups
+ 'a': atom        &   'del' nr         'splitres' nr   'l': list residues
+ 't': atom type   |   'keep' nr        'splitat' nr    'h': help
+ 'r': residue         'res' nr         'chain' char
+ "name": group        'case': case sensitive           'q': save and quit
+ 'ri': residue index
+
+> 
+Copied index group 1 'Protein'
+Found 265 atoms in range 1-265
+Merged two groups with AND: 505 265 -> 265
+
+ 15 Protein_&_a_1-265   :   265 atoms
+
+> 
+
+> 
+Copied index group 15 '1VET-em_A'
+Found 240 atoms with name B*
+Merged two groups with AND: 265 240 -> 122
+
+ 16 1VET-em_A_&_B*      :   122 atoms
+
+> 
+
+> 
+Copied index group 1 'Protein'
+Found 240 atoms in range 266-505
+Merged two groups with AND: 505 240 -> 240
+
+ 17 Protein_&_a_266-505 :   240 atoms
+
+> 
+
+> 
+Copied index group 17 '1VET-em_B'
+Found 240 atoms with name B*
+Merged two groups with AND: 240 240 -> 118
+
+ 18 1VET-em_B_&_B*      :   118 atoms
+
+> 
+
+> 

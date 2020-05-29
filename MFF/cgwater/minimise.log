@@ -1,0 +1,2995 @@
+Log file opened on Thu Feb  4 15:59:21 2010
+Host: rini  pid: 12004  nodeid: 0  nnodes:  1
+The Gromacs distribution was built Thu Sep 17 14:15:57 UTC 2009 by
+buildd@vernadsky (Linux 2.6.24-23-server i686)
+
+
+                         :-)  G  R  O  M  A  C  S  (-:
+
+                  Gromacs Runs On Most of All Computer Systems
+
+                            :-)  VERSION 4.0.5  (-:
+
+
+      Written by David van der Spoel, Erik Lindahl, Berk Hess, and others.
+       Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+             Copyright (c) 2001-2008, The GROMACS development team,
+            check out http://www.gromacs.org for more information.
+
+         This program is free software; you can redistribute it and/or
+          modify it under the terms of the GNU General Public License
+         as published by the Free Software Foundation; either version 2
+             of the License, or (at your option) any later version.
+
+                                :-)  mdrun  (-:
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator           = steep
+   nsteps               = 1000
+   init_step            = 0
+   ns_type              = Grid
+   nstlist              = 10
+   ndelta               = 2
+   nstcomm              = 1
+   comm_mode            = Linear
+   nstlog               = 100
+   nstxout              = 100
+   nstvout              = 100
+   nstfout              = 0
+   nstenergy            = 100
+   nstxtcout            = 100
+   init_t               = 0
+   delta_t              = 0.02
+   xtcprec              = 1000
+   nkx                  = 10
+   nky                  = 10
+   nkz                  = 10
+   pme_order            = 4
+   ewald_rtol           = 1e-05
+   ewald_geometry       = 0
+   epsilon_surface      = 0
+   optimize_fft         = FALSE
+   ePBC                 = xyz
+   bPeriodicMols        = FALSE
+   bContinuation        = FALSE
+   bShakeSOR            = FALSE
+   etc                  = No
+   epc                  = No
+   epctype              = Isotropic
+   tau_p                = 1
+   ref_p (3x3):
+      ref_p[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref_p[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref_p[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   compress (3x3):
+      compress[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compress[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compress[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   refcoord_scaling     = No
+   posres_com (3):
+      posres_com[0]= 0.00000e+00
+      posres_com[1]= 0.00000e+00
+      posres_com[2]= 0.00000e+00
+   posres_comB (3):
+      posres_comB[0]= 0.00000e+00
+      posres_comB[1]= 0.00000e+00
+      posres_comB[2]= 0.00000e+00
+   andersen_seed        = 815131
+   rlist                = 1.2
+   rtpi                 = 0.05
+   coulombtype          = Shift
+   rcoulomb_switch      = 0
+   rcoulomb             = 1.2
+   vdwtype              = Shift
+   rvdw_switch          = 0.9
+   rvdw                 = 1.2
+   epsilon_r            = 15
+   epsilon_rf           = 1
+   tabext               = 1
+   implicit_solvent     = No
+   gb_algorithm         = Still
+   gb_epsilon_solvent   = 80
+   nstgbradii           = 1
+   rgbradii             = 2
+   gb_saltconc          = 0
+   gb_obc_alpha         = 1
+   gb_obc_beta          = 0.8
+   gb_obc_gamma         = 4.85
+   sa_surface_tension   = 2.092
+   DispCorr             = No
+   free_energy          = no
+   init_lambda          = 0
+   sc_alpha             = 0
+   sc_power             = 0
+   sc_sigma             = 0.3
+   delta_lambda         = 0
+   nwall                = 0
+   wall_type            = 9-3
+   wall_atomtype[0]     = -1
+   wall_atomtype[1]     = -1
+   wall_density[0]      = 0
+   wall_density[1]      = 0
+   wall_ewald_zfac      = 3
+   pull                 = no
+   disre                = No
+   disre_weighting      = Conservative
+   disre_mixed          = FALSE
+   dr_fc                = 1000
+   dr_tau               = 0
+   nstdisreout          = 100
+   orires_fc            = 0
+   orires_tau           = 0
+   nstorireout          = 100
+   dihre-fc             = 1000
+   em_stepsize          = 0.01
+   em_tol               = 50
+   niter                = 20
+   fc_stepsize          = 0
+   nstcgsteep           = 1000
+   nbfgscorr            = 10
+   ConstAlg             = Lincs
+   shake_tol            = 0.0001
+   lincs_order          = 4
+   lincs_warnangle      = 30
+   lincs_iter           = 4
+   bd_fric              = 0
+   ld_seed              = 1993
+   cos_accel            = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   userint1             = 0
+   userint2             = 0
+   userint3             = 0
+   userint4             = 0
+   userreal1            = 0
+   userreal2            = 0
+   userreal3            = 0
+   userreal4            = 0
+grpopts:
+   nrdf:       32397
+   ref_t:           0
+   tau_t:           0
+anneal:          No
+ann_npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp_flags[  0]: 0
+   efield-x:
+      n = 0
+   efield-xt:
+      n = 0
+   efield-y:
+      n = 0
+   efield-yt:
+      n = 0
+   efield-z:
+      n = 0
+   efield-zt:
+      n = 0
+   bQMMM                = FALSE
+   QMconstraints        = 0
+   QMMMscheme           = 0
+   scalefactor          = 1
+qm_opts:
+   ngQM                 = 0
+Table routines are used for coulomb: TRUE
+Table routines are used for vdw:     TRUE
+Using shifted Lennard-Jones, switch between 0.9 and 1.2 nm
+Cut-off's:   NS: 1.2   Coulomb: 1.2   LJ: 1.2
+System total charge: 0.000
+Generated table with 1100 data points for Shift.
+Tabscale = 500 points/nm
+Generated table with 1100 data points for LJ6Shift.
+Tabscale = 500 points/nm
+Generated table with 1100 data points for LJ12Shift.
+Tabscale = 500 points/nm
+Configuring nonbonded kernels...
+Testing AMD 3DNow support... not present.
+Testing ia32 SSE support... present.
+
+
+Removing pbc first time
+Initiating Steepest Descents
+Max number of connections per atom is 0
+Total number of connections is 0
+Started Steepest Descents on node 0 Thu Feb  4 15:59:21 2010
+Steepest Descents:
+   Tolerance (Fmax)   =  5.00000e+01
+   Number of steps    =         1000
+Grid: 10 x 10 x 10 cells
+           Step           Time         Lambda
+              0        0.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -2.85896e+05    0.00000e+00   -2.85896e+05   -3.56179e+02
+
+           Step           Time         Lambda
+              1        1.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -2.90836e+05    0.00000e+00   -2.90836e+05   -7.02140e+02
+
+           Step           Time         Lambda
+              2        2.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -2.96756e+05    0.00000e+00   -2.96756e+05   -1.13198e+03
+
+           Step           Time         Lambda
+              3        3.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.02458e+05    0.00000e+00   -3.02458e+05   -1.56494e+03
+
+           Step           Time         Lambda
+              4        4.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.07253e+05    0.00000e+00   -3.07253e+05   -1.94432e+03
+
+           Step           Time         Lambda
+              5        5.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.11014e+05    0.00000e+00   -3.11014e+05   -2.24992e+03
+
+           Step           Time         Lambda
+              6        6.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.13225e+05    0.00000e+00   -3.13225e+05   -2.43176e+03
+
+           Step           Time         Lambda
+              7        7.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.13791e+05    0.00000e+00   -3.13791e+05   -2.47798e+03
+
+           Step           Time         Lambda
+              8        8.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.14545e+05    0.00000e+00   -3.14545e+05   -2.53985e+03
+
+           Step           Time         Lambda
+              9        9.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.14982e+05    0.00000e+00   -3.14982e+05   -2.57567e+03
+
+           Step           Time         Lambda
+             10       10.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.15431e+05    0.00000e+00   -3.15431e+05   -2.61202e+03
+
+           Step           Time         Lambda
+             11       11.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.15832e+05    0.00000e+00   -3.15832e+05   -2.64521e+03
+
+           Step           Time         Lambda
+             12       12.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.16050e+05    0.00000e+00   -3.16050e+05   -2.66204e+03
+
+           Step           Time         Lambda
+             13       13.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.16539e+05    0.00000e+00   -3.16539e+05   -2.70220e+03
+
+           Step           Time         Lambda
+             14       14.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.16715e+05    0.00000e+00   -3.16715e+05   -2.71543e+03
+
+           Step           Time         Lambda
+             15       15.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.16928e+05    0.00000e+00   -3.16928e+05   -2.73423e+03
+
+           Step           Time         Lambda
+             16       16.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.16988e+05    0.00000e+00   -3.16988e+05   -2.73943e+03
+
+           Step           Time         Lambda
+             17       17.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.17011e+05    0.00000e+00   -3.17011e+05   -2.74274e+03
+
+           Step           Time         Lambda
+             18       18.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.17047e+05    0.00000e+00   -3.17047e+05   -2.74583e+03
+
+           Step           Time         Lambda
+             19       19.00000        0.00000
+
+           Step           Time         Lambda
+             20       20.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.17266e+05    0.00000e+00   -3.17266e+05   -2.75937e+03
+
+           Step           Time         Lambda
+             21       21.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.17274e+05    0.00000e+00   -3.17274e+05   -2.76373e+03
+
+           Step           Time         Lambda
+             22       22.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.17327e+05    0.00000e+00   -3.17327e+05   -2.76909e+03
+
+           Step           Time         Lambda
+             23       23.00000        0.00000
+
+           Step           Time         Lambda
+             24       24.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.17592e+05    0.00000e+00   -3.17592e+05   -2.78480e+03
+
+           Step           Time         Lambda
+             25       25.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.17784e+05    0.00000e+00   -3.17784e+05   -2.80014e+03
+
+           Step           Time         Lambda
+             26       26.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.17927e+05    0.00000e+00   -3.17927e+05   -2.81133e+03
+
+           Step           Time         Lambda
+             27       27.00000        0.00000
+
+           Step           Time         Lambda
+             28       28.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18040e+05    0.00000e+00   -3.18040e+05   -2.81960e+03
+
+           Step           Time         Lambda
+             29       29.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18170e+05    0.00000e+00   -3.18170e+05   -2.82922e+03
+
+           Step           Time         Lambda
+             30       30.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18330e+05    0.00000e+00   -3.18330e+05   -2.84143e+03
+
+           Step           Time         Lambda
+             31       31.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18375e+05    0.00000e+00   -3.18375e+05   -2.84664e+03
+
+           Step           Time         Lambda
+             32       32.00000        0.00000
+
+           Step           Time         Lambda
+             33       33.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18508e+05    0.00000e+00   -3.18508e+05   -2.85487e+03
+
+           Step           Time         Lambda
+             34       34.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18605e+05    0.00000e+00   -3.18605e+05   -2.86213e+03
+
+           Step           Time         Lambda
+             35       35.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18695e+05    0.00000e+00   -3.18695e+05   -2.86869e+03
+
+           Step           Time         Lambda
+             36       36.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18751e+05    0.00000e+00   -3.18751e+05   -2.87330e+03
+
+           Step           Time         Lambda
+             37       37.00000        0.00000
+
+           Step           Time         Lambda
+             38       38.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18823e+05    0.00000e+00   -3.18823e+05   -2.87823e+03
+
+           Step           Time         Lambda
+             39       39.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18930e+05    0.00000e+00   -3.18930e+05   -2.88576e+03
+
+           Step           Time         Lambda
+             40       40.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.18938e+05    0.00000e+00   -3.18938e+05   -2.88848e+03
+
+           Step           Time         Lambda
+             41       41.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19180e+05    0.00000e+00   -3.19180e+05   -2.90326e+03
+
+           Step           Time         Lambda
+             42       42.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19266e+05    0.00000e+00   -3.19266e+05   -2.90904e+03
+
+           Step           Time         Lambda
+             43       43.00000        0.00000
+
+           Step           Time         Lambda
+             44       44.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19402e+05    0.00000e+00   -3.19402e+05   -2.91900e+03
+
+           Step           Time         Lambda
+             45       45.00000        0.00000
+
+           Step           Time         Lambda
+             46       46.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19523e+05    0.00000e+00   -3.19523e+05   -2.92747e+03
+
+           Step           Time         Lambda
+             47       47.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19611e+05    0.00000e+00   -3.19611e+05   -2.93375e+03
+
+           Step           Time         Lambda
+             48       48.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19697e+05    0.00000e+00   -3.19697e+05   -2.93940e+03
+
+           Step           Time         Lambda
+             49       49.00000        0.00000
+
+           Step           Time         Lambda
+             50       50.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19770e+05    0.00000e+00   -3.19770e+05   -2.94442e+03
+
+           Step           Time         Lambda
+             51       51.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19854e+05    0.00000e+00   -3.19854e+05   -2.95035e+03
+
+           Step           Time         Lambda
+             52       52.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.19939e+05    0.00000e+00   -3.19939e+05   -2.95577e+03
+
+           Step           Time         Lambda
+             53       53.00000        0.00000
+
+           Step           Time         Lambda
+             54       54.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20012e+05    0.00000e+00   -3.20012e+05   -2.96083e+03
+
+           Step           Time         Lambda
+             55       55.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20072e+05    0.00000e+00   -3.20072e+05   -2.96481e+03
+
+           Step           Time         Lambda
+             56       56.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20137e+05    0.00000e+00   -3.20137e+05   -2.96909e+03
+
+           Step           Time         Lambda
+             57       57.00000        0.00000
+
+           Step           Time         Lambda
+             58       58.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20205e+05    0.00000e+00   -3.20205e+05   -2.97357e+03
+
+           Step           Time         Lambda
+             59       59.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20239e+05    0.00000e+00   -3.20239e+05   -2.97556e+03
+
+           Step           Time         Lambda
+             60       60.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20309e+05    0.00000e+00   -3.20309e+05   -2.98021e+03
+
+           Step           Time         Lambda
+             61       61.00000        0.00000
+
+           Step           Time         Lambda
+             62       62.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20359e+05    0.00000e+00   -3.20359e+05   -2.98342e+03
+
+           Step           Time         Lambda
+             63       63.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20422e+05    0.00000e+00   -3.20422e+05   -2.98724e+03
+
+           Step           Time         Lambda
+             64       64.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20462e+05    0.00000e+00   -3.20462e+05   -2.98966e+03
+
+           Step           Time         Lambda
+             65       65.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20504e+05    0.00000e+00   -3.20504e+05   -2.99213e+03
+
+           Step           Time         Lambda
+             66       66.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20546e+05    0.00000e+00   -3.20546e+05   -2.99471e+03
+
+           Step           Time         Lambda
+             67       67.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20581e+05    0.00000e+00   -3.20581e+05   -2.99664e+03
+
+           Step           Time         Lambda
+             68       68.00000        0.00000
+
+           Step           Time         Lambda
+             69       69.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20643e+05    0.00000e+00   -3.20643e+05   -3.00055e+03
+
+           Step           Time         Lambda
+             70       70.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20740e+05    0.00000e+00   -3.20740e+05   -3.00566e+03
+
+           Step           Time         Lambda
+             71       71.00000        0.00000
+
+           Step           Time         Lambda
+             72       72.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20786e+05    0.00000e+00   -3.20786e+05   -3.00859e+03
+
+           Step           Time         Lambda
+             73       73.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20826e+05    0.00000e+00   -3.20826e+05   -3.01097e+03
+
+           Step           Time         Lambda
+             74       74.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20843e+05    0.00000e+00   -3.20843e+05   -3.01120e+03
+
+           Step           Time         Lambda
+             75       75.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20866e+05    0.00000e+00   -3.20866e+05   -3.01258e+03
+
+           Step           Time         Lambda
+             76       76.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20883e+05    0.00000e+00   -3.20883e+05   -3.01347e+03
+
+           Step           Time         Lambda
+             77       77.00000        0.00000
+
+           Step           Time         Lambda
+             78       78.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20945e+05    0.00000e+00   -3.20945e+05   -3.01737e+03
+
+           Step           Time         Lambda
+             79       79.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.20997e+05    0.00000e+00   -3.20997e+05   -3.01978e+03
+
+           Step           Time         Lambda
+             80       80.00000        0.00000
+
+           Step           Time         Lambda
+             81       81.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21032e+05    0.00000e+00   -3.21032e+05   -3.02183e+03
+
+           Step           Time         Lambda
+             82       82.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21056e+05    0.00000e+00   -3.21056e+05   -3.02314e+03
+
+           Step           Time         Lambda
+             83       83.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21082e+05    0.00000e+00   -3.21082e+05   -3.02422e+03
+
+           Step           Time         Lambda
+             84       84.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21098e+05    0.00000e+00   -3.21098e+05   -3.02477e+03
+
+           Step           Time         Lambda
+             85       85.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21106e+05    0.00000e+00   -3.21106e+05   -3.02489e+03
+
+           Step           Time         Lambda
+             86       86.00000        0.00000
+
+           Step           Time         Lambda
+             87       87.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21160e+05    0.00000e+00   -3.21160e+05   -3.02830e+03
+
+           Step           Time         Lambda
+             88       88.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21207e+05    0.00000e+00   -3.21207e+05   -3.03032e+03
+
+           Step           Time         Lambda
+             89       89.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21221e+05    0.00000e+00   -3.21221e+05   -3.03039e+03
+
+           Step           Time         Lambda
+             90       90.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21240e+05    0.00000e+00   -3.21240e+05   -3.03137e+03
+
+           Step           Time         Lambda
+             91       91.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21246e+05    0.00000e+00   -3.21246e+05   -3.03155e+03
+
+           Step           Time         Lambda
+             92       92.00000        0.00000
+
+           Step           Time         Lambda
+             93       93.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21287e+05    0.00000e+00   -3.21287e+05   -3.03398e+03
+
+           Step           Time         Lambda
+             94       94.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21319e+05    0.00000e+00   -3.21319e+05   -3.03543e+03
+
+           Step           Time         Lambda
+             95       95.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21328e+05    0.00000e+00   -3.21328e+05   -3.03471e+03
+
+           Step           Time         Lambda
+             96       96.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21370e+05    0.00000e+00   -3.21370e+05   -3.03719e+03
+
+           Step           Time         Lambda
+             97       97.00000        0.00000
+
+           Step           Time         Lambda
+             98       98.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21386e+05    0.00000e+00   -3.21386e+05   -3.03732e+03
+
+           Step           Time         Lambda
+             99       99.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21408e+05    0.00000e+00   -3.21408e+05   -3.03838e+03
+
+           Step           Time         Lambda
+            100      100.00000        0.00000
+
+           Step           Time         Lambda
+            101      101.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21454e+05    0.00000e+00   -3.21454e+05   -3.04125e+03
+
+           Step           Time         Lambda
+            102      102.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21486e+05    0.00000e+00   -3.21486e+05   -3.04205e+03
+
+           Step           Time         Lambda
+            103      103.00000        0.00000
+
+           Step           Time         Lambda
+            104      104.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21516e+05    0.00000e+00   -3.21516e+05   -3.04380e+03
+
+           Step           Time         Lambda
+            105      105.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21543e+05    0.00000e+00   -3.21543e+05   -3.04473e+03
+
+           Step           Time         Lambda
+            106      106.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21565e+05    0.00000e+00   -3.21565e+05   -3.04531e+03
+
+           Step           Time         Lambda
+            107      107.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21582e+05    0.00000e+00   -3.21582e+05   -3.04589e+03
+
+           Step           Time         Lambda
+            108      108.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21585e+05    0.00000e+00   -3.21585e+05   -3.04503e+03
+
+           Step           Time         Lambda
+            109      109.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21614e+05    0.00000e+00   -3.21614e+05   -3.04655e+03
+
+           Step           Time         Lambda
+            110      110.00000        0.00000
+
+           Step           Time         Lambda
+            111      111.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21650e+05    0.00000e+00   -3.21650e+05   -3.04861e+03
+
+           Step           Time         Lambda
+            112      112.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21658e+05    0.00000e+00   -3.21658e+05   -3.04749e+03
+
+           Step           Time         Lambda
+            113      113.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21671e+05    0.00000e+00   -3.21671e+05   -3.04821e+03
+
+           Step           Time         Lambda
+            114      114.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21680e+05    0.00000e+00   -3.21680e+05   -3.04839e+03
+
+           Step           Time         Lambda
+            115      115.00000        0.00000
+
+           Step           Time         Lambda
+            116      116.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21722e+05    0.00000e+00   -3.21722e+05   -3.05103e+03
+
+           Step           Time         Lambda
+            117      117.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21738e+05    0.00000e+00   -3.21738e+05   -3.05126e+03
+
+           Step           Time         Lambda
+            118      118.00000        0.00000
+
+           Step           Time         Lambda
+            119      119.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21762e+05    0.00000e+00   -3.21762e+05   -3.05262e+03
+
+           Step           Time         Lambda
+            120      120.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21790e+05    0.00000e+00   -3.21790e+05   -3.05290e+03
+
+           Step           Time         Lambda
+            121      121.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21808e+05    0.00000e+00   -3.21808e+05   -3.05377e+03
+
+           Step           Time         Lambda
+            122      122.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21812e+05    0.00000e+00   -3.21812e+05   -3.05308e+03
+
+           Step           Time         Lambda
+            123      123.00000        0.00000
+
+           Step           Time         Lambda
+            124      124.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21841e+05    0.00000e+00   -3.21841e+05   -3.05495e+03
+
+           Step           Time         Lambda
+            125      125.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21846e+05    0.00000e+00   -3.21846e+05   -3.05444e+03
+
+           Step           Time         Lambda
+            126      126.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21872e+05    0.00000e+00   -3.21872e+05   -3.05602e+03
+
+           Step           Time         Lambda
+            127      127.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21887e+05    0.00000e+00   -3.21887e+05   -3.05580e+03
+
+           Step           Time         Lambda
+            128      128.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21894e+05    0.00000e+00   -3.21894e+05   -3.05585e+03
+
+           Step           Time         Lambda
+            129      129.00000        0.00000
+
+           Step           Time         Lambda
+            130      130.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21922e+05    0.00000e+00   -3.21922e+05   -3.05737e+03
+
+           Step           Time         Lambda
+            131      131.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21936e+05    0.00000e+00   -3.21936e+05   -3.05760e+03
+
+           Step           Time         Lambda
+            132      132.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21943e+05    0.00000e+00   -3.21943e+05   -3.05702e+03
+
+           Step           Time         Lambda
+            133      133.00000        0.00000
+
+           Step           Time         Lambda
+            134      134.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21973e+05    0.00000e+00   -3.21973e+05   -3.05892e+03
+
+           Step           Time         Lambda
+            135      135.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.21982e+05    0.00000e+00   -3.21982e+05   -3.05796e+03
+
+           Step           Time         Lambda
+            136      136.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22015e+05    0.00000e+00   -3.22015e+05   -3.05989e+03
+
+           Step           Time         Lambda
+            137      137.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22023e+05    0.00000e+00   -3.22023e+05   -3.05920e+03
+
+           Step           Time         Lambda
+            138      138.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22031e+05    0.00000e+00   -3.22031e+05   -3.05941e+03
+
+           Step           Time         Lambda
+            139      139.00000        0.00000
+
+           Step           Time         Lambda
+            140      140.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22059e+05    0.00000e+00   -3.22059e+05   -3.06092e+03
+
+           Step           Time         Lambda
+            141      141.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22072e+05    0.00000e+00   -3.22072e+05   -3.06103e+03
+
+           Step           Time         Lambda
+            142      142.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22080e+05    0.00000e+00   -3.22080e+05   -3.06038e+03
+
+           Step           Time         Lambda
+            143      143.00000        0.00000
+
+           Step           Time         Lambda
+            144      144.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22110e+05    0.00000e+00   -3.22110e+05   -3.06228e+03
+
+           Step           Time         Lambda
+            145      145.00000        0.00000
+
+           Step           Time         Lambda
+            146      146.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22130e+05    0.00000e+00   -3.22130e+05   -3.06259e+03
+
+           Step           Time         Lambda
+            147      147.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22144e+05    0.00000e+00   -3.22144e+05   -3.06318e+03
+
+           Step           Time         Lambda
+            148      148.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22159e+05    0.00000e+00   -3.22159e+05   -3.06312e+03
+
+           Step           Time         Lambda
+            149      149.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22171e+05    0.00000e+00   -3.22171e+05   -3.06350e+03
+
+           Step           Time         Lambda
+            150      150.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22179e+05    0.00000e+00   -3.22179e+05   -3.06294e+03
+
+           Step           Time         Lambda
+            151      151.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22194e+05    0.00000e+00   -3.22194e+05   -3.06363e+03
+
+           Step           Time         Lambda
+            152      152.00000        0.00000
+
+           Step           Time         Lambda
+            153      153.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22217e+05    0.00000e+00   -3.22217e+05   -3.06458e+03
+
+           Step           Time         Lambda
+            154      154.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22234e+05    0.00000e+00   -3.22234e+05   -3.06441e+03
+
+           Step           Time         Lambda
+            155      155.00000        0.00000
+
+           Step           Time         Lambda
+            156      156.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22255e+05    0.00000e+00   -3.22255e+05   -3.06533e+03
+
+           Step           Time         Lambda
+            157      157.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22274e+05    0.00000e+00   -3.22274e+05   -3.06547e+03
+
+           Step           Time         Lambda
+            158      158.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22288e+05    0.00000e+00   -3.22288e+05   -3.06537e+03
+
+           Step           Time         Lambda
+            159      159.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22296e+05    0.00000e+00   -3.22296e+05   -3.06527e+03
+
+           Step           Time         Lambda
+            160      160.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22311e+05    0.00000e+00   -3.22311e+05   -3.06569e+03
+
+           Step           Time         Lambda
+            161      161.00000        0.00000
+
+           Step           Time         Lambda
+            162      162.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22330e+05    0.00000e+00   -3.22330e+05   -3.06667e+03
+
+           Step           Time         Lambda
+            163      163.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22348e+05    0.00000e+00   -3.22348e+05   -3.06644e+03
+
+           Step           Time         Lambda
+            164      164.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22361e+05    0.00000e+00   -3.22361e+05   -3.06665e+03
+
+           Step           Time         Lambda
+            165      165.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22365e+05    0.00000e+00   -3.22365e+05   -3.06594e+03
+
+           Step           Time         Lambda
+            166      166.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22375e+05    0.00000e+00   -3.22375e+05   -3.06607e+03
+
+           Step           Time         Lambda
+            167      167.00000        0.00000
+
+           Step           Time         Lambda
+            168      168.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22404e+05    0.00000e+00   -3.22404e+05   -3.06754e+03
+
+           Step           Time         Lambda
+            169      169.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22417e+05    0.00000e+00   -3.22417e+05   -3.06654e+03
+
+           Step           Time         Lambda
+            170      170.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22434e+05    0.00000e+00   -3.22434e+05   -3.06676e+03
+
+           Step           Time         Lambda
+            171      171.00000        0.00000
+
+           Step           Time         Lambda
+            172      172.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22456e+05    0.00000e+00   -3.22456e+05   -3.06801e+03
+
+           Step           Time         Lambda
+            173      173.00000        0.00000
+
+           Step           Time         Lambda
+            174      174.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22470e+05    0.00000e+00   -3.22470e+05   -3.06825e+03
+
+           Step           Time         Lambda
+            175      175.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22479e+05    0.00000e+00   -3.22479e+05   -3.06810e+03
+
+           Step           Time         Lambda
+            176      176.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22491e+05    0.00000e+00   -3.22491e+05   -3.06847e+03
+
+           Step           Time         Lambda
+            177      177.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22496e+05    0.00000e+00   -3.22496e+05   -3.06797e+03
+
+           Step           Time         Lambda
+            178      178.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22510e+05    0.00000e+00   -3.22510e+05   -3.06844e+03
+
+           Step           Time         Lambda
+            179      179.00000        0.00000
+
+           Step           Time         Lambda
+            180      180.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22523e+05    0.00000e+00   -3.22523e+05   -3.06889e+03
+
+           Step           Time         Lambda
+            181      181.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22531e+05    0.00000e+00   -3.22531e+05   -3.06731e+03
+
+           Step           Time         Lambda
+            182      182.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22561e+05    0.00000e+00   -3.22561e+05   -3.06907e+03
+
+           Step           Time         Lambda
+            183      183.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22565e+05    0.00000e+00   -3.22565e+05   -3.06765e+03
+
+           Step           Time         Lambda
+            184      184.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22586e+05    0.00000e+00   -3.22586e+05   -3.06871e+03
+
+           Step           Time         Lambda
+            185      185.00000        0.00000
+
+           Step           Time         Lambda
+            186      186.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22598e+05    0.00000e+00   -3.22598e+05   -3.06886e+03
+
+           Step           Time         Lambda
+            187      187.00000        0.00000
+
+           Step           Time         Lambda
+            188      188.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22611e+05    0.00000e+00   -3.22611e+05   -3.06928e+03
+
+           Step           Time         Lambda
+            189      189.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22624e+05    0.00000e+00   -3.22624e+05   -3.06846e+03
+
+           Step           Time         Lambda
+            190      190.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22640e+05    0.00000e+00   -3.22640e+05   -3.06919e+03
+
+           Step           Time         Lambda
+            191      191.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22641e+05    0.00000e+00   -3.22641e+05   -3.06801e+03
+
+           Step           Time         Lambda
+            192      192.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22660e+05    0.00000e+00   -3.22660e+05   -3.06894e+03
+
+           Step           Time         Lambda
+            193      193.00000        0.00000
+
+           Step           Time         Lambda
+            194      194.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22673e+05    0.00000e+00   -3.22673e+05   -3.06912e+03
+
+           Step           Time         Lambda
+            195      195.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22677e+05    0.00000e+00   -3.22677e+05   -3.06856e+03
+
+           Step           Time         Lambda
+            196      196.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22690e+05    0.00000e+00   -3.22690e+05   -3.06899e+03
+
+           Step           Time         Lambda
+            197      197.00000        0.00000
+
+           Step           Time         Lambda
+            198      198.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22702e+05    0.00000e+00   -3.22702e+05   -3.06926e+03
+
+           Step           Time         Lambda
+            199      199.00000        0.00000
+
+           Step           Time         Lambda
+            200      200.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22712e+05    0.00000e+00   -3.22712e+05   -3.06905e+03
+
+           Step           Time         Lambda
+            201      201.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22720e+05    0.00000e+00   -3.22720e+05   -3.06919e+03
+
+           Step           Time         Lambda
+            202      202.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22728e+05    0.00000e+00   -3.22728e+05   -3.06892e+03
+
+           Step           Time         Lambda
+            203      203.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22737e+05    0.00000e+00   -3.22737e+05   -3.06900e+03
+
+           Step           Time         Lambda
+            204      204.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22742e+05    0.00000e+00   -3.22742e+05   -3.06862e+03
+
+           Step           Time         Lambda
+            205      205.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22749e+05    0.00000e+00   -3.22749e+05   -3.06865e+03
+
+           Step           Time         Lambda
+            206      206.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22754e+05    0.00000e+00   -3.22754e+05   -3.06807e+03
+
+           Step           Time         Lambda
+            207      207.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22757e+05    0.00000e+00   -3.22757e+05   -3.06790e+03
+
+           Step           Time         Lambda
+            208      208.00000        0.00000
+
+           Step           Time         Lambda
+            209      209.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22777e+05    0.00000e+00   -3.22777e+05   -3.06895e+03
+
+           Step           Time         Lambda
+            210      210.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22792e+05    0.00000e+00   -3.22792e+05   -3.06745e+03
+
+           Step           Time         Lambda
+            211      211.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22808e+05    0.00000e+00   -3.22808e+05   -3.06819e+03
+
+           Step           Time         Lambda
+            212      212.00000        0.00000
+
+           Step           Time         Lambda
+            213      213.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22818e+05    0.00000e+00   -3.22818e+05   -3.06865e+03
+
+           Step           Time         Lambda
+            214      214.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22826e+05    0.00000e+00   -3.22826e+05   -3.06766e+03
+
+           Step           Time         Lambda
+            215      215.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22838e+05    0.00000e+00   -3.22838e+05   -3.06816e+03
+
+           Step           Time         Lambda
+            216      216.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22842e+05    0.00000e+00   -3.22842e+05   -3.06768e+03
+
+           Step           Time         Lambda
+            217      217.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22842e+05    0.00000e+00   -3.22842e+05   -3.06709e+03
+
+           Step           Time         Lambda
+            218      218.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22844e+05    0.00000e+00   -3.22844e+05   -3.06664e+03
+
+           Step           Time         Lambda
+            219      219.00000        0.00000
+
+           Step           Time         Lambda
+            220      220.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22870e+05    0.00000e+00   -3.22870e+05   -3.06808e+03
+
+           Step           Time         Lambda
+            221      221.00000        0.00000
+
+           Step           Time         Lambda
+            222      222.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22882e+05    0.00000e+00   -3.22882e+05   -3.06782e+03
+
+           Step           Time         Lambda
+            223      223.00000        0.00000
+
+           Step           Time         Lambda
+            224      224.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22890e+05    0.00000e+00   -3.22890e+05   -3.06797e+03
+
+           Step           Time         Lambda
+            225      225.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22898e+05    0.00000e+00   -3.22898e+05   -3.06781e+03
+
+           Step           Time         Lambda
+            226      226.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22905e+05    0.00000e+00   -3.22905e+05   -3.06767e+03
+
+           Step           Time         Lambda
+            227      227.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22913e+05    0.00000e+00   -3.22913e+05   -3.06752e+03
+
+           Step           Time         Lambda
+            228      228.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22915e+05    0.00000e+00   -3.22915e+05   -3.06724e+03
+
+           Step           Time         Lambda
+            229      229.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22923e+05    0.00000e+00   -3.22923e+05   -3.06711e+03
+
+           Step           Time         Lambda
+            230      230.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22924e+05    0.00000e+00   -3.22924e+05   -3.06650e+03
+
+           Step           Time         Lambda
+            231      231.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22932e+05    0.00000e+00   -3.22932e+05   -3.06648e+03
+
+           Step           Time         Lambda
+            232      232.00000        0.00000
+
+           Step           Time         Lambda
+            233      233.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22949e+05    0.00000e+00   -3.22949e+05   -3.06733e+03
+
+           Step           Time         Lambda
+            234      234.00000        0.00000
+
+           Step           Time         Lambda
+            235      235.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22960e+05    0.00000e+00   -3.22960e+05   -3.06698e+03
+
+           Step           Time         Lambda
+            236      236.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22966e+05    0.00000e+00   -3.22966e+05   -3.06702e+03
+
+           Step           Time         Lambda
+            237      237.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22974e+05    0.00000e+00   -3.22974e+05   -3.06675e+03
+
+           Step           Time         Lambda
+            238      238.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22979e+05    0.00000e+00   -3.22979e+05   -3.06660e+03
+
+           Step           Time         Lambda
+            239      239.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22984e+05    0.00000e+00   -3.22984e+05   -3.06624e+03
+
+           Step           Time         Lambda
+            240      240.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22988e+05    0.00000e+00   -3.22988e+05   -3.06590e+03
+
+           Step           Time         Lambda
+            241      241.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.22990e+05    0.00000e+00   -3.22990e+05   -3.06539e+03
+
+           Step           Time         Lambda
+            242      242.00000        0.00000
+
+           Step           Time         Lambda
+            243      243.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23012e+05    0.00000e+00   -3.23012e+05   -3.06664e+03
+
+           Step           Time         Lambda
+            244      244.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23018e+05    0.00000e+00   -3.23018e+05   -3.06447e+03
+
+           Step           Time         Lambda
+            245      245.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23037e+05    0.00000e+00   -3.23037e+05   -3.06557e+03
+
+           Step           Time         Lambda
+            246      246.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23040e+05    0.00000e+00   -3.23040e+05   -3.06525e+03
+
+           Step           Time         Lambda
+            247      247.00000        0.00000
+
+           Step           Time         Lambda
+            248      248.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23055e+05    0.00000e+00   -3.23055e+05   -3.06598e+03
+
+           Step           Time         Lambda
+            249      249.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23056e+05    0.00000e+00   -3.23056e+05   -3.06432e+03
+
+           Step           Time         Lambda
+            250      250.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23073e+05    0.00000e+00   -3.23073e+05   -3.06521e+03
+
+           Step           Time         Lambda
+            251      251.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23073e+05    0.00000e+00   -3.23073e+05   -3.06453e+03
+
+           Step           Time         Lambda
+            252      252.00000        0.00000
+
+           Step           Time         Lambda
+            253      253.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23091e+05    0.00000e+00   -3.23091e+05   -3.06545e+03
+
+           Step           Time         Lambda
+            254      254.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23096e+05    0.00000e+00   -3.23096e+05   -3.06377e+03
+
+           Step           Time         Lambda
+            255      255.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23108e+05    0.00000e+00   -3.23108e+05   -3.06432e+03
+
+           Step           Time         Lambda
+            256      256.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23114e+05    0.00000e+00   -3.23114e+05   -3.06413e+03
+
+           Step           Time         Lambda
+            257      257.00000        0.00000
+
+           Step           Time         Lambda
+            258      258.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23129e+05    0.00000e+00   -3.23129e+05   -3.06468e+03
+
+           Step           Time         Lambda
+            259      259.00000        0.00000
+
+           Step           Time         Lambda
+            260      260.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23138e+05    0.00000e+00   -3.23138e+05   -3.06450e+03
+
+           Step           Time         Lambda
+            261      261.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23144e+05    0.00000e+00   -3.23144e+05   -3.06430e+03
+
+           Step           Time         Lambda
+            262      262.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23152e+05    0.00000e+00   -3.23152e+05   -3.06407e+03
+
+           Step           Time         Lambda
+            263      263.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23154e+05    0.00000e+00   -3.23154e+05   -3.06362e+03
+
+           Step           Time         Lambda
+            264      264.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23160e+05    0.00000e+00   -3.23160e+05   -3.06338e+03
+
+           Step           Time         Lambda
+            265      265.00000        0.00000
+
+           Step           Time         Lambda
+            266      266.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23176e+05    0.00000e+00   -3.23176e+05   -3.06412e+03
+
+           Step           Time         Lambda
+            267      267.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23180e+05    0.00000e+00   -3.23180e+05   -3.06181e+03
+
+           Step           Time         Lambda
+            268      268.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23205e+05    0.00000e+00   -3.23205e+05   -3.06334e+03
+
+           Step           Time         Lambda
+            269      269.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23206e+05    0.00000e+00   -3.23206e+05   -3.06242e+03
+
+           Step           Time         Lambda
+            270      270.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23212e+05    0.00000e+00   -3.23212e+05   -3.06239e+03
+
+           Step           Time         Lambda
+            271      271.00000        0.00000
+
+           Step           Time         Lambda
+            272      272.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23227e+05    0.00000e+00   -3.23227e+05   -3.06295e+03
+
+           Step           Time         Lambda
+            273      273.00000        0.00000
+
+           Step           Time         Lambda
+            274      274.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23236e+05    0.00000e+00   -3.23236e+05   -3.06263e+03
+
+           Step           Time         Lambda
+            275      275.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23243e+05    0.00000e+00   -3.23243e+05   -3.06246e+03
+
+           Step           Time         Lambda
+            276      276.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23248e+05    0.00000e+00   -3.23248e+05   -3.06217e+03
+
+           Step           Time         Lambda
+            277      277.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23253e+05    0.00000e+00   -3.23253e+05   -3.06180e+03
+
+           Step           Time         Lambda
+            278      278.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23258e+05    0.00000e+00   -3.23258e+05   -3.06139e+03
+
+           Step           Time         Lambda
+            279      279.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23260e+05    0.00000e+00   -3.23260e+05   -3.06088e+03
+
+           Step           Time         Lambda
+            280      280.00000        0.00000
+
+           Step           Time         Lambda
+            281      281.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23280e+05    0.00000e+00   -3.23280e+05   -3.06187e+03
+
+           Step           Time         Lambda
+            282      282.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23289e+05    0.00000e+00   -3.23289e+05   -3.05940e+03
+
+           Step           Time         Lambda
+            283      283.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23308e+05    0.00000e+00   -3.23308e+05   -3.06055e+03
+
+           Step           Time         Lambda
+            284      284.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23311e+05    0.00000e+00   -3.23311e+05   -3.05999e+03
+
+           Step           Time         Lambda
+            285      285.00000        0.00000
+
+           Step           Time         Lambda
+            286      286.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23325e+05    0.00000e+00   -3.23325e+05   -3.06065e+03
+
+           Step           Time         Lambda
+            287      287.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23332e+05    0.00000e+00   -3.23332e+05   -3.05901e+03
+
+           Step           Time         Lambda
+            288      288.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23341e+05    0.00000e+00   -3.23341e+05   -3.05928e+03
+
+           Step           Time         Lambda
+            289      289.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23349e+05    0.00000e+00   -3.23349e+05   -3.05901e+03
+
+           Step           Time         Lambda
+            290      290.00000        0.00000
+
+           Step           Time         Lambda
+            291      291.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23360e+05    0.00000e+00   -3.23360e+05   -3.05942e+03
+
+           Step           Time         Lambda
+            292      292.00000        0.00000
+
+           Step           Time         Lambda
+            293      293.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23368e+05    0.00000e+00   -3.23368e+05   -3.05905e+03
+
+           Step           Time         Lambda
+            294      294.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23375e+05    0.00000e+00   -3.23375e+05   -3.05888e+03
+
+           Step           Time         Lambda
+            295      295.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23381e+05    0.00000e+00   -3.23381e+05   -3.05846e+03
+
+           Step           Time         Lambda
+            296      296.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23386e+05    0.00000e+00   -3.23386e+05   -3.05810e+03
+
+           Step           Time         Lambda
+            297      297.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23389e+05    0.00000e+00   -3.23389e+05   -3.05761e+03
+
+           Step           Time         Lambda
+            298      298.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23391e+05    0.00000e+00   -3.23391e+05   -3.05695e+03
+
+           Step           Time         Lambda
+            299      299.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23395e+05    0.00000e+00   -3.23395e+05   -3.05645e+03
+
+           Step           Time         Lambda
+            300      300.00000        0.00000
+
+           Step           Time         Lambda
+            301      301.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23416e+05    0.00000e+00   -3.23416e+05   -3.05761e+03
+
+           Step           Time         Lambda
+            302      302.00000        0.00000
+
+           Step           Time         Lambda
+            303      303.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23426e+05    0.00000e+00   -3.23426e+05   -3.05689e+03
+
+           Step           Time         Lambda
+            304      304.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23431e+05    0.00000e+00   -3.23431e+05   -3.05668e+03
+
+           Step           Time         Lambda
+            305      305.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23438e+05    0.00000e+00   -3.23438e+05   -3.05642e+03
+
+           Step           Time         Lambda
+            306      306.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23440e+05    0.00000e+00   -3.23440e+05   -3.05566e+03
+
+           Step           Time         Lambda
+            307      307.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23449e+05    0.00000e+00   -3.23449e+05   -3.05559e+03
+
+           Step           Time         Lambda
+            308      308.00000        0.00000
+
+           Step           Time         Lambda
+            309      309.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23461e+05    0.00000e+00   -3.23461e+05   -3.05604e+03
+
+           Step           Time         Lambda
+            310      310.00000        0.00000
+
+           Step           Time         Lambda
+            311      311.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23468e+05    0.00000e+00   -3.23468e+05   -3.05547e+03
+
+           Step           Time         Lambda
+            312      312.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23475e+05    0.00000e+00   -3.23475e+05   -3.05541e+03
+
+           Step           Time         Lambda
+            313      313.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23482e+05    0.00000e+00   -3.23482e+05   -3.05486e+03
+
+           Step           Time         Lambda
+            314      314.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23487e+05    0.00000e+00   -3.23487e+05   -3.05470e+03
+
+           Step           Time         Lambda
+            315      315.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23490e+05    0.00000e+00   -3.23490e+05   -3.05404e+03
+
+           Step           Time         Lambda
+            316      316.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23496e+05    0.00000e+00   -3.23496e+05   -3.05385e+03
+
+           Step           Time         Lambda
+            317      317.00000        0.00000
+
+           Step           Time         Lambda
+            318      318.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23507e+05    0.00000e+00   -3.23507e+05   -3.05420e+03
+
+           Step           Time         Lambda
+            319      319.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23518e+05    0.00000e+00   -3.23518e+05   -3.05256e+03
+
+           Step           Time         Lambda
+            320      320.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23530e+05    0.00000e+00   -3.23530e+05   -3.05298e+03
+
+           Step           Time         Lambda
+            321      321.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23533e+05    0.00000e+00   -3.23533e+05   -3.05215e+03
+
+           Step           Time         Lambda
+            322      322.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23538e+05    0.00000e+00   -3.23538e+05   -3.05196e+03
+
+           Step           Time         Lambda
+            323      323.00000        0.00000
+
+           Step           Time         Lambda
+            324      324.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23551e+05    0.00000e+00   -3.23551e+05   -3.05227e+03
+
+           Step           Time         Lambda
+            325      325.00000        0.00000
+
+           Step           Time         Lambda
+            326      326.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23557e+05    0.00000e+00   -3.23557e+05   -3.05187e+03
+
+           Step           Time         Lambda
+            327      327.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23562e+05    0.00000e+00   -3.23562e+05   -3.05150e+03
+
+           Step           Time         Lambda
+            328      328.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23569e+05    0.00000e+00   -3.23569e+05   -3.05123e+03
+
+           Step           Time         Lambda
+            329      329.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23573e+05    0.00000e+00   -3.23573e+05   -3.05069e+03
+
+           Step           Time         Lambda
+            330      330.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23579e+05    0.00000e+00   -3.23579e+05   -3.05043e+03
+
+           Step           Time         Lambda
+            331      331.00000        0.00000
+
+           Step           Time         Lambda
+            332      332.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23588e+05    0.00000e+00   -3.23588e+05   -3.05070e+03
+
+           Step           Time         Lambda
+            333      333.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23596e+05    0.00000e+00   -3.23596e+05   -3.04876e+03
+
+           Step           Time         Lambda
+            334      334.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23611e+05    0.00000e+00   -3.23611e+05   -3.04957e+03
+
+           Step           Time         Lambda
+            335      335.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23614e+05    0.00000e+00   -3.23614e+05   -3.04841e+03
+
+           Step           Time         Lambda
+            336      336.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23623e+05    0.00000e+00   -3.23623e+05   -3.04856e+03
+
+           Step           Time         Lambda
+            337      337.00000        0.00000
+
+           Step           Time         Lambda
+            338      338.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23631e+05    0.00000e+00   -3.23631e+05   -3.04851e+03
+
+           Step           Time         Lambda
+            339      339.00000        0.00000
+
+           Step           Time         Lambda
+            340      340.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23637e+05    0.00000e+00   -3.23637e+05   -3.04833e+03
+
+           Step           Time         Lambda
+            341      341.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23642e+05    0.00000e+00   -3.23642e+05   -3.04784e+03
+
+           Step           Time         Lambda
+            342      342.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23648e+05    0.00000e+00   -3.23648e+05   -3.04760e+03
+
+           Step           Time         Lambda
+            343      343.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23653e+05    0.00000e+00   -3.23653e+05   -3.04708e+03
+
+           Step           Time         Lambda
+            344      344.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23657e+05    0.00000e+00   -3.23657e+05   -3.04676e+03
+
+           Step           Time         Lambda
+            345      345.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23660e+05    0.00000e+00   -3.23660e+05   -3.04612e+03
+
+           Step           Time         Lambda
+            346      346.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23663e+05    0.00000e+00   -3.23663e+05   -3.04563e+03
+
+           Step           Time         Lambda
+            347      347.00000        0.00000
+
+           Step           Time         Lambda
+            348      348.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23678e+05    0.00000e+00   -3.23678e+05   -3.04635e+03
+
+           Step           Time         Lambda
+            349      349.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23689e+05    0.00000e+00   -3.23689e+05   -3.04469e+03
+
+           Step           Time         Lambda
+            350      350.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23695e+05    0.00000e+00   -3.23695e+05   -3.04450e+03
+
+           Step           Time         Lambda
+            351      351.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23700e+05    0.00000e+00   -3.23700e+05   -3.04416e+03
+
+           Step           Time         Lambda
+            352      352.00000        0.00000
+
+           Step           Time         Lambda
+            353      353.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23711e+05    0.00000e+00   -3.23711e+05   -3.04451e+03
+
+           Step           Time         Lambda
+            354      354.00000        0.00000
+
+           Step           Time         Lambda
+            355      355.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23718e+05    0.00000e+00   -3.23718e+05   -3.04397e+03
+
+           Step           Time         Lambda
+            356      356.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23722e+05    0.00000e+00   -3.23722e+05   -3.04371e+03
+
+           Step           Time         Lambda
+            357      357.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23727e+05    0.00000e+00   -3.23727e+05   -3.04321e+03
+
+           Step           Time         Lambda
+            358      358.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23732e+05    0.00000e+00   -3.23732e+05   -3.04284e+03
+
+           Step           Time         Lambda
+            359      359.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23734e+05    0.00000e+00   -3.23734e+05   -3.04219e+03
+
+           Step           Time         Lambda
+            360      360.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23739e+05    0.00000e+00   -3.23739e+05   -3.04180e+03
+
+           Step           Time         Lambda
+            361      361.00000        0.00000
+
+           Step           Time         Lambda
+            362      362.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23751e+05    0.00000e+00   -3.23751e+05   -3.04229e+03
+
+           Step           Time         Lambda
+            363      363.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23754e+05    0.00000e+00   -3.23754e+05   -3.03999e+03
+
+           Step           Time         Lambda
+            364      364.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23769e+05    0.00000e+00   -3.23769e+05   -3.04079e+03
+
+           Step           Time         Lambda
+            365      365.00000        0.00000
+
+           Step           Time         Lambda
+            366      366.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23775e+05    0.00000e+00   -3.23775e+05   -3.04078e+03
+
+           Step           Time         Lambda
+            367      367.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23780e+05    0.00000e+00   -3.23780e+05   -3.03940e+03
+
+           Step           Time         Lambda
+            368      368.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23790e+05    0.00000e+00   -3.23790e+05   -3.03959e+03
+
+           Step           Time         Lambda
+            369      369.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23792e+05    0.00000e+00   -3.23792e+05   -3.03867e+03
+
+           Step           Time         Lambda
+            370      370.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23796e+05    0.00000e+00   -3.23796e+05   -3.03834e+03
+
+           Step           Time         Lambda
+            371      371.00000        0.00000
+
+           Step           Time         Lambda
+            372      372.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23807e+05    0.00000e+00   -3.23807e+05   -3.03862e+03
+
+           Step           Time         Lambda
+            373      373.00000        0.00000
+
+           Step           Time         Lambda
+            374      374.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23814e+05    0.00000e+00   -3.23814e+05   -3.03812e+03
+
+           Step           Time         Lambda
+            375      375.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23818e+05    0.00000e+00   -3.23818e+05   -3.03760e+03
+
+           Step           Time         Lambda
+            376      376.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23824e+05    0.00000e+00   -3.23824e+05   -3.03730e+03
+
+           Step           Time         Lambda
+            377      377.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23826e+05    0.00000e+00   -3.23826e+05   -3.03659e+03
+
+           Step           Time         Lambda
+            378      378.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23833e+05    0.00000e+00   -3.23833e+05   -3.03633e+03
+
+           Step           Time         Lambda
+            379      379.00000        0.00000
+
+           Step           Time         Lambda
+            380      380.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23841e+05    0.00000e+00   -3.23841e+05   -3.03649e+03
+
+           Step           Time         Lambda
+            381      381.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23842e+05    0.00000e+00   -3.23842e+05   -3.03431e+03
+
+           Step           Time         Lambda
+            382      382.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23857e+05    0.00000e+00   -3.23857e+05   -3.03517e+03
+
+           Step           Time         Lambda
+            383      383.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23858e+05    0.00000e+00   -3.23858e+05   -3.03359e+03
+
+           Step           Time         Lambda
+            384      384.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23867e+05    0.00000e+00   -3.23867e+05   -3.03382e+03
+
+           Step           Time         Lambda
+            385      385.00000        0.00000
+
+           Step           Time         Lambda
+            386      386.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23874e+05    0.00000e+00   -3.23874e+05   -3.03364e+03
+
+           Step           Time         Lambda
+            387      387.00000        0.00000
+
+           Step           Time         Lambda
+            388      388.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23880e+05    0.00000e+00   -3.23880e+05   -3.03340e+03
+
+           Step           Time         Lambda
+            389      389.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23883e+05    0.00000e+00   -3.23883e+05   -3.03258e+03
+
+           Step           Time         Lambda
+            390      390.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23889e+05    0.00000e+00   -3.23889e+05   -3.03242e+03
+
+           Step           Time         Lambda
+            391      391.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23891e+05    0.00000e+00   -3.23891e+05   -3.03154e+03
+
+           Step           Time         Lambda
+            392      392.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23897e+05    0.00000e+00   -3.23897e+05   -3.03150e+03
+
+           Step           Time         Lambda
+            393      393.00000        0.00000
+
+           Step           Time         Lambda
+            394      394.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23907e+05    0.00000e+00   -3.23907e+05   -3.03159e+03
+
+           Step           Time         Lambda
+            395      395.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23910e+05    0.00000e+00   -3.23910e+05   -3.03019e+03
+
+           Step           Time         Lambda
+            396      396.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23917e+05    0.00000e+00   -3.23917e+05   -3.02992e+03
+
+           Step           Time         Lambda
+            397      397.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23922e+05    0.00000e+00   -3.23922e+05   -3.02969e+03
+
+           Step           Time         Lambda
+            398      398.00000        0.00000
+
+           Step           Time         Lambda
+            399      399.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23931e+05    0.00000e+00   -3.23931e+05   -3.02973e+03
+
+           Step           Time         Lambda
+            400      400.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23934e+05    0.00000e+00   -3.23934e+05   -3.02826e+03
+
+           Step           Time         Lambda
+            401      401.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23941e+05    0.00000e+00   -3.23941e+05   -3.02806e+03
+
+           Step           Time         Lambda
+            402      402.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23945e+05    0.00000e+00   -3.23945e+05   -3.02773e+03
+
+           Step           Time         Lambda
+            403      403.00000        0.00000
+
+           Step           Time         Lambda
+            404      404.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23955e+05    0.00000e+00   -3.23955e+05   -3.02780e+03
+
+           Step           Time         Lambda
+            405      405.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23959e+05    0.00000e+00   -3.23959e+05   -3.02630e+03
+
+           Step           Time         Lambda
+            406      406.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23965e+05    0.00000e+00   -3.23965e+05   -3.02595e+03
+
+           Step           Time         Lambda
+            407      407.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23970e+05    0.00000e+00   -3.23970e+05   -3.02578e+03
+
+           Step           Time         Lambda
+            408      408.00000        0.00000
+
+           Step           Time         Lambda
+            409      409.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23978e+05    0.00000e+00   -3.23978e+05   -3.02576e+03
+
+           Step           Time         Lambda
+            410      410.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23980e+05    0.00000e+00   -3.23980e+05   -3.02423e+03
+
+           Step           Time         Lambda
+            411      411.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23987e+05    0.00000e+00   -3.23987e+05   -3.02405e+03
+
+           Step           Time         Lambda
+            412      412.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.23990e+05    0.00000e+00   -3.23990e+05   -3.02366e+03
+
+           Step           Time         Lambda
+            413      413.00000        0.00000
+
+           Step           Time         Lambda
+            414      414.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24000e+05    0.00000e+00   -3.24000e+05   -3.02378e+03
+
+           Step           Time         Lambda
+            415      415.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24005e+05    0.00000e+00   -3.24005e+05   -3.02225e+03
+
+           Step           Time         Lambda
+            416      416.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24011e+05    0.00000e+00   -3.24011e+05   -3.02189e+03
+
+           Step           Time         Lambda
+            417      417.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24015e+05    0.00000e+00   -3.24015e+05   -3.02163e+03
+
+           Step           Time         Lambda
+            418      418.00000        0.00000
+
+           Step           Time         Lambda
+            419      419.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24024e+05    0.00000e+00   -3.24024e+05   -3.02166e+03
+
+           Step           Time         Lambda
+            420      420.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24026e+05    0.00000e+00   -3.24026e+05   -3.02002e+03
+
+           Step           Time         Lambda
+            421      421.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24034e+05    0.00000e+00   -3.24034e+05   -3.01979e+03
+
+           Step           Time         Lambda
+            422      422.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24039e+05    0.00000e+00   -3.24039e+05   -3.01945e+03
+
+           Step           Time         Lambda
+            423      423.00000        0.00000
+
+           Step           Time         Lambda
+            424      424.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24049e+05    0.00000e+00   -3.24049e+05   -3.01953e+03
+
+           Step           Time         Lambda
+            425      425.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24050e+05    0.00000e+00   -3.24050e+05   -3.01795e+03
+
+           Step           Time         Lambda
+            426      426.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24057e+05    0.00000e+00   -3.24057e+05   -3.01764e+03
+
+           Step           Time         Lambda
+            427      427.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24061e+05    0.00000e+00   -3.24061e+05   -3.01725e+03
+
+           Step           Time         Lambda
+            428      428.00000        0.00000
+
+           Step           Time         Lambda
+            429      429.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24072e+05    0.00000e+00   -3.24072e+05   -3.01737e+03
+
+           Step           Time         Lambda
+            430      430.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24072e+05    0.00000e+00   -3.24072e+05   -3.01556e+03
+
+           Step           Time         Lambda
+            431      431.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24079e+05    0.00000e+00   -3.24079e+05   -3.01541e+03
+
+           Step           Time         Lambda
+            432      432.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24082e+05    0.00000e+00   -3.24082e+05   -3.01495e+03
+
+           Step           Time         Lambda
+            433      433.00000        0.00000
+
+           Step           Time         Lambda
+            434      434.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24094e+05    0.00000e+00   -3.24094e+05   -3.01514e+03
+
+           Step           Time         Lambda
+            435      435.00000        0.00000
+
+           Step           Time         Lambda
+            436      436.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24099e+05    0.00000e+00   -3.24099e+05   -3.01469e+03
+
+           Step           Time         Lambda
+            437      437.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24102e+05    0.00000e+00   -3.24102e+05   -3.01347e+03
+
+           Step           Time         Lambda
+            438      438.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24108e+05    0.00000e+00   -3.24108e+05   -3.01319e+03
+
+           Step           Time         Lambda
+            439      439.00000        0.00000
+
+           Step           Time         Lambda
+            440      440.00000        0.00000
+
+   Energies (kJ/mol)
+        LJ (SR)   Coulomb (SR)      Potential Pressure (bar)
+   -3.24116e+05    0.00000e+00   -3.24116e+05   -3.01331e+03
+
+
+Steepest Descents converged to Fmax < 50 in 441 steps
+Potential Energy  = -3.2411625e+05
+Maximum force     =  4.0512333e+01 on atom 4272
+Norm of force     =  1.9360634e+00
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+   RF=Reaction-Field  FE=Free Energy  SCFE=Soft-Core/Free Energy
+   T=Tabulated        W3=SPC/TIP3p    W4=TIP4p (single or pairs)
+   NF=No Forces
+
+ Computing:                         M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------
+ VdW(T)                           139.117614        7512.351    35.7
+ Outer nonbonded loop               7.475813          74.758     0.4
+ NS-Pairs                         634.474309       13323.960    63.4
+ Reset In Box                       4.762800          14.288     0.1
+ CG-CoM                             4.762800          14.288     0.1
+ Virial                             4.782645          86.088     0.4
+-----------------------------------------------------------------------
+ Total                                             21025.734   100.0
+-----------------------------------------------------------------------
+
+
+     R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+ Computing:         Nodes     Number     G-Cycles    Seconds     %
+-----------------------------------------------------------------------
+ Neighbor search        1        441       95.309       37.6    89.6
+ Force                  1        441        9.460        3.7     8.9
+ Rest                   1                   1.594        0.6     1.5
+-----------------------------------------------------------------------
+ Total                  1                 106.363       42.0   100.0
+-----------------------------------------------------------------------
+
+               NODE (s)   Real (s)      (%)
+       Time:     42.000     42.000    100.0
+               (Mnbf/s)   (GFlops)   (steps/hour)
+Performance:      3.312     21.026        37800.0
+Finished mdrun on node 0 Thu Feb  4 16:00:03 2010

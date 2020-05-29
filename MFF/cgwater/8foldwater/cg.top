@@ -1,0 +1,22 @@
+;
+; CGWater | MARTINI 2.1
+;
+
+; Include forcefield parameters
+#include "martini_v2.1.itp"
+
+; Include topology
+
+; Include position restraints
+#ifdef POSRES
+#include "posre.itp"
+#endif
+
+[ system ]
+; Name
+CGWater
+
+[ molecules ]
+; Compound        #mols
+W                 86400
+
